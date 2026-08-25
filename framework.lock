@@ -3,6 +3,15 @@ version: 0.3.9-dev.16.4
 role: architecture
 product: Rally Site Studio
 repository: jumpvin/Rally-Studio
+release-target: 4.0.0
+current-build: 3.0.0
+current-milestone: null
+current-status: null
+current-owner: architecture
+next-owner: architecture
 lifecycle-stage: discovery
 current-phase: phase-5-editing
 implementation-authorized: false
+builder-readiness: blocked
+blocking-reason: Discovery is incomplete and no implementation milestone is authorized.
+next-command: Continue Discovery
