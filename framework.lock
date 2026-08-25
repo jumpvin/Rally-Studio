@@ -1,0 +1,8 @@
+framework: Rally Development Framework
+version: 0.3.9-dev.16.4
+role: architecture
+product: Rally Site Studio
+repository: jumpvin/Rally-Studio
+lifecycle-stage: discovery
+current-phase: phase-5-editing
+implementation-authorized: false
