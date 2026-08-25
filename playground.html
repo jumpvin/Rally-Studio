@@ -1,0 +1,35 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Playground · Rally Studio</title><link rel="stylesheet" href="assets/styles.css"><link rel="stylesheet" href="assets/v3.css"></head><body><div class="shell"><aside class="sidebar">
+  <a class="brand" href="index.html"><div class="mark">R</div><div><strong>Rally Studio</strong><span>v3.0 · Experience System</span></div></a>
+  <div class="search"><input id="studioSearch" placeholder="Search this page…" aria-label="Search this page"></div>
+  <div class="nav-group"><div class="nav-label">Foundation</div>
+    <a class="nav-link" href="index.html"><span class="nav-dot"></span> Home</a>
+    <a class="nav-link" href="foundations.html"><span class="nav-dot"></span> Foundations</a>
+    <a class="nav-link" href="tokens.html"><span class="nav-dot"></span> Design Tokens</a>
+    <a class="nav-link" href="rules.html"><span class="nav-dot"></span> Experience Rules</a>
+  </div>
+  <div class="nav-group"><div class="nav-label">Build</div>
+    <a class="nav-link" href="components.html"><span class="nav-dot"></span> Components</a>
+    <a class="nav-link" href="patterns.html"><span class="nav-dot"></span> Patterns</a>
+    <a class="nav-link" href="experiences.html"><span class="nav-dot"></span> Experiences</a>
+    <a class="nav-link" href="playground.html"><span class="nav-dot"></span> Playground</a>
+  </div>
+  <div class="nav-group"><div class="nav-label">Memory</div>
+    <a class="nav-link" href="decisions.html"><span class="nav-dot"></span> Decision Journal</a>
+  </div>
+</aside><main class="main"><header class="topbar"><button class="btn secondary mobile-toggle" data-menu>Menu</button><div class="crumb">Build / Playground</div><div class="top-actions"><a class="btn secondary" href="components.html">Components</a><a class="btn" href="patterns.html">Patterns</a></div></header><div class="page">
+<section class="container" data-search-item><div class="hero-panel"><span class="eyebrow">v3.0</span><h1>The Playground is now a lightweight page composer.</h1><p>Collapse the interface, preview a full page, add and remove sections, reorder the rhythm, swap templates, and export the current mockup as HTML.</p><div class="studio-toolbar"><a class="btn gold" href="#composer">Open composer</a><button class="btn secondary" style="color:#fff;border-color:rgba(255,255,255,.45)" data-preview-only>Preview only</button></div></div></section>
+<section class="wide section composer-section" id="composer" data-search-item>
+  <div class="composer-head"><div><span class="eyebrow">Builder mode</span><h2>Assemble the page from Rally-approved sections.</h2><p>The composer keeps the system flexible without letting every page become a one-off design.</p></div><div class="composer-actions"><button class="btn secondary" data-preview-mode="desktop">Desktop</button><button class="btn secondary" data-preview-mode="mobile">Mobile</button><button class="btn gold" data-export-page>Export HTML</button></div></div>
+  <div class="composer-grid">
+    <aside class="editor-panel composer-controls" id="settingsPanel">
+      <div class="control-group"><h3>Template</h3><p>Start from a page pattern, then modify the section stack.</p><select class="studio-select" data-template-select><option value="home">Homepage</option><option value="pricing">Pricing</option><option value="features">Features</option></select><button class="btn" data-load-template>Load template</button></div>
+      <div class="control-group"><h3>Add section</h3><p>Use the same sections documented in the component library.</p><div class="add-grid"><button data-add-section="hero">Hero</button><button data-add-section="capabilities">Capability strip</button><button data-add-section="software">Software showcase</button><button data-add-section="quote">Editorial quote</button><button data-add-section="story">Organizer story</button><button data-add-section="support">Support promise</button><button data-add-section="pricing">Transparent pricing</button><button data-add-section="cta">CTA</button></div></div>
+      <div class="control-group"><h3>Section order</h3><p>Move, remove, or inspect the current page rhythm.</p><div class="section-list" data-section-list></div></div>
+      <div class="control-group"><h3>Core tokens</h3><div class="control-row"><label>Forest</label><input type="color" data-token="forest"><output data-output="forest"></output></div><div class="control-row"><label>Gold</label><input type="color" data-token="gold"><output data-output="gold"></output></div><div class="control-row"><label>Radius</label><input type="range" min="6" max="32" data-token="radius"><output data-output="radius"></output></div><div class="control-row"><label>Section gap</label><input type="range" min="56" max="150" data-token="section"><output data-output="section"></output></div></div>
+      <div class="control-group"><h3>Export</h3><button class="btn" data-copy-page>Copy current page HTML</button><button class="btn secondary" data-reset-composer>Reset Composer</button><pre class="token-readout" data-page-readout></pre></div>
+    </aside>
+    <div class="preview-stack composer-preview"><div class="preview-mode"><strong>Preview:</strong><button class="active" data-preview-mode="desktop">Desktop</button><button data-preview-mode="mobile">Mobile</button><button data-preview-only>Preview only</button></div><div class="live-site-frame" id="pagePreview"><div data-page-preview></div></div></div>
+  </div>
+</section>
+<section class="container section" data-search-item><div class="intro"><span class="eyebrow">What phase 6 adds</span><h2>Studio can now preview a page instead of just a token state.</h2><p>This phase adds collapsible chrome, template loading, section adding/removing/reordering, desktop/mobile preview modes, and exportable HTML.</p></div><div class="grid three"><div class="card"><h3>Preview mode</h3><p>Collapse the sidebar and settings panel so the design can breathe.</p></div><div class="card"><h3>Page composer</h3><p>Choose a template, then add, remove, and reorder sections.</p></div><div class="card"><h3>Export path</h3><p>Copy the current page markup as a starting point for WordPress patterns.</p></div></div></section>
+<div class="footer-note">Rally Studio v2 v3.0 focuses on the composer: collapsible workspace, section stack, templates, preview modes, and page HTML export.</div><div class="footer-note">Rally Studio v3.0 is the shared brand, design, and experience system for the Rally website, product, documentation, and future add-ons.</div></div></main></div><script src="assets/app.js"></script></body></html>
