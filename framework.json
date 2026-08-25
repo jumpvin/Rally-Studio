@@ -1,0 +1,10 @@
+{
+  "name": "Modular Development Framework",
+  "version": "0.3.13-dev.24.3",
+  "package_build": "0.3.13-dev.24.3",
+  "release_target": "0.3.13",
+  "repository": "jumpvin/Rally-Studio",
+  "authorized_branch": "master",
+  "source_package": "modular-development-framework-v0.3.13-dev.24.3.zip",
+  "source_package_sha256": "16817e55c786955d5870b9f2db7d3b6ed17a5cba94f3c11f8aed19a28747ec75"
+}

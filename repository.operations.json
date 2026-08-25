@@ -1,0 +1,18 @@
+{
+  "schema_version": 2,
+  "repository": "__MATERIALIZED_REPOSITORY__",
+  "repository_identity_source": "declared-and-origin-verified",
+  "branches": {"authorized":null,"release_pattern":"release/<target-version>","synchronization":"fetch-prune-fast-forward-only"},
+  "environment": {"shell":"PowerShell","notes":"Canonical product-mode Framework operations"},
+  "readiness": {"extension_lock_glob":"docs/extensions/*.lock","baseline_certification":"integrity/baseline-certification-result.json","required_tools":["git","powershell"],"required_packages":[],"required_capabilities":["git.remote.fetch","git.remote.push"]},
+  "operations": {
+    "lint": {"command":null,"result_gate":"implementation-blocking","applicability":"not-applicable"},
+    "test_isolated": {"command":null,"result_gate":"implementation-blocking","applicability":"not-applicable"},
+    "test_integration": {"command":null,"result_gate":"review-blocking","applicability":"not-applicable"},
+    "test_manual": {"command":null,"result_gate":"acceptance-blocking","applicability":"not-applicable"},
+    "validate": {"command":null,"result_gate":"implementation-blocking","applicability":"not-applicable"},
+    "package": {"command":null,"result_gate":"review-blocking","applicability":"not-applicable"},
+    "package_validate": {"command":null,"result_gate":"review-blocking","applicability":"not-applicable"}
+  },
+  "artifacts": {"development":"build/dev","release_candidate":"build/rc","production":"build/prod","reports":"build/reports"}
+}

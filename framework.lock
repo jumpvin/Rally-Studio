@@ -1,17 +1,6 @@
-framework: Rally Development Framework
-version: 0.3.9-dev.16.4
-role: architecture
-product: Rally Site Studio
-repository: jumpvin/Rally-Studio
-release-target: 4.0.0
-current-build: 3.0.0
-current-milestone: null
-current-status: null
-current-owner: architecture
-next-owner: architecture
-lifecycle-stage: discovery
-current-phase: phase-5-editing
-implementation-authorized: false
-builder-readiness: blocked
-blocking-reason: Discovery is incomplete and no implementation milestone is authorized.
-next-command: Continue Discovery
+framework:
+  name: "Modular Development Framework"
+  adopted-version: "0.3.13-dev.24.3"
+  package-build: "0.3.13-dev.24.3"
+  source-package: "modular-development-framework-v0.3.13-dev.24.3.zip"
+  source-package-sha256: "16817e55c786955d5870b9f2db7d3b6ed17a5cba94f3c11f8aed19a28747ec75"

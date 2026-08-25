@@ -1,18 +1,12 @@
 {
-  "framework_version": "0.3.9-dev.16.4",
-  "product": "Rally Site Studio",
+  "schema_version": 3,
   "repository": "jumpvin/Rally-Studio",
-  "role": "architecture",
+  "authorized_branch": "master",
+  "framework_identity": "0.3.13-dev.24.3",
   "release_target": "4.0.0",
-  "current_build": "3.0.0",
   "current_milestone": null,
   "current_status": null,
-  "current_owner": "architecture",
+  "current_build": "3.0.0",
   "next_owner": "architecture",
-  "lifecycle_stage": "discovery",
-  "current_phase": "phase-5-editing",
-  "implementation_authorized": false,
-  "builder_readiness": "blocked",
-  "blocking_reason": "Discovery is incomplete and no implementation milestone is authorized.",
   "next_command": "Continue Discovery"
 }
