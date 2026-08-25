@@ -1,0 +1,10 @@
+{
+  "framework_version": "0.3.9-dev.16.4",
+  "product": "Rally Site Studio",
+  "repository": "jumpvin/Rally-Studio",
+  "role": "architecture",
+  "lifecycle_stage": "discovery",
+  "current_phase": "phase-5-editing",
+  "implementation_authorized": false,
+  "next_command": "Continue Discovery"
+}
