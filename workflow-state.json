@@ -5,15 +5,16 @@
   "framework_identity": "0.3.13-dev.24.3",
   "release_target": "4.0.0",
   "current_milestone": "studio-4-m09-multi-page-website-management",
-  "current_status": "implemented",
+  "current_status": "approved",
   "current_build": "3.0.0",
-  "baseline": "2e84910632710ec51c3728ec17d1cb401e10f0b6",
-  "mode": "review",
+  "baseline": "daebc85592e5aee4e5c70da368cea61e1a539335",
+  "mode": "architecture",
   "validation_level": "functional",
   "affected_paths": [
     "studio4/**",
     "docs/implementation/**",
     "docs/milestones/studio-4-m09-multi-page-website-management.md",
+    "docs/reviews/studio-4-m09-architecture-review.md",
     "package.json"
   ],
   "affected_surfaces": [
@@ -23,6 +24,6 @@
     "Multi-page transaction/history integration"
   ],
   "retained_evidence": [],
-  "next_owner": "Architecture",
-  "next_command": "Review"
+  "next_owner": "architecture",
+  "next_command": "Create Milestone"
 }
