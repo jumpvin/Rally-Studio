@@ -95,6 +95,29 @@ export function createStudioStore(initial) {
       publish({ ...state, workspace: { ...state.workspace, activePageId: pageId, selectedComponentId: null } });
       return pageId;
     },
+    replaceWebsiteFromStarter(resolved, confirmed = false) {
+      if (!confirmed && state.website.pageIds.length) throw new Error('Website replacement requires confirmation');
+      if (!resolved?.item?.id || !resolved?.pages?.length) throw new Error('Resolved starter package required');
+      const websiteId = `website-${Date.now().toString(36)}-${++sequence}`;
+      const pageIds = resolved.pages.map(() => `page-${Date.now().toString(36)}-${++sequence}`);
+      const instanceIds = resolved.pages.map(template => template.members.map(member => `instance-${member.definitionType}-${Date.now().toString(36)}-${++sequence}`));
+      transact(`Assemble website: ${resolved.item.name}`, websiteId, next => {
+        next.website = { id: websiteId, name: resolved.websiteName, pageIds, sourceLibraryItemId: resolved.item.id, sourceLibraryVersion: resolved.item.version };
+        next.pages = {}; next.componentInstances = {};
+        resolved.pages.forEach((template, pageIndex) => {
+          template.members.forEach((member, memberIndex) => { const id = instanceIds[pageIndex][memberIndex]; next.componentInstances[id] = { id, ...clone(member) }; });
+          const id = pageIds[pageIndex]; next.pages[id] = { id, websiteId, name: template.name, slug: template.slug, componentInstanceIds: instanceIds[pageIndex], sourceLibraryItemId: template.item.id, sourceLibraryVersion: template.item.version };
+        });
+        next.designSettings = { ...next.designSettings, ...clone(resolved.designSettings || {}) };
+      });
+      return websiteId;
+    },
+    replaceWithBlankWebsite(name = 'Untitled Website', confirmed = false) {
+      if (!confirmed && state.website.pageIds.length) throw new Error('Website replacement requires confirmation');
+      const websiteId = `website-${Date.now().toString(36)}-${++sequence}`, pageId = `page-${Date.now().toString(36)}-${++sequence}`;
+      transact('Create blank website', websiteId, next => { next.website = { id: websiteId, name: String(name).trim() || 'Untitled Website', pageIds: [pageId] }; next.pages = { [pageId]: { id: pageId, websiteId, name: 'Home', slug: '/', componentInstanceIds: [] } }; next.componentInstances = {}; });
+      return websiteId;
+    },
     renamePage(pageId, name) {
       if (!state.pages[pageId]) throw new Error(`Unknown page: ${pageId}`);
       const finalName = String(name).trim(); if (!finalName) throw new Error('Page name is required');

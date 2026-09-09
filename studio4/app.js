@@ -6,6 +6,7 @@ import { seedState } from './seed.js';
 import { createLibraryRegistry } from './library-registry.js';
 import { librarySeeds } from './library-seeds.js';
 import { resolvePageTemplate } from './page-template-service.js';
+import { resolveStarterPackage } from './starter-package-service.js';
 
 for (const href of ['/studio4/responsive.css','/studio4/history.css','/studio4/library.css']) document.head.append(Object.assign(document.createElement('link'), { rel: 'stylesheet', href }));
 const store = createStudioStore(seedState), registry = createComponentRegistry(), $ = selector => document.querySelector(selector), canvas = $('#page-canvas');
@@ -31,6 +32,7 @@ historyDock.className = 'history-dock';
 historyDock.innerHTML = '<header><strong>Workspace History</strong><button data-close-history>×</button></header><div class="history-actions"><button data-undo>Undo</button><button data-redo>Redo</button></div><ol data-history-list></ol>';
 document.body.append(historyDock);
 const historyToggle = document.createElement('button'); historyToggle.className = 'history-toggle'; historyToggle.textContent = 'History'; document.querySelector('.mode-switch').after(historyToggle);
+const websiteToggle = document.createElement('button'); websiteToggle.className = 'website-toggle'; websiteToggle.textContent = 'Start Website'; historyToggle.after(websiteToggle); websiteToggle.onclick = openWebsiteDialog;
 historyToggle.onclick = () => historyDock.classList.toggle('open'); historyDock.querySelector('[data-close-history]').onclick = () => historyDock.classList.remove('open'); historyDock.querySelector('[data-undo]').onclick = () => store.undo(); historyDock.querySelector('[data-redo]').onclick = () => store.redo();
 
 function renderHistory() {
@@ -66,6 +68,19 @@ function openCreatePageDialog() {
   overlay.querySelector('.dialog-cancel').onclick = () => overlay.remove();
   overlay.querySelector('form').onsubmit = event => { event.preventDefault(); selection.resolved ? store.createPageFromTemplate(selection.resolved, input.value) : store.createPage(input.value); overlay.remove(); };
   document.body.append(overlay); input.focus(); input.select();
+}
+
+function openWebsiteDialog() {
+  const packages = pageTemplateLibrary.query({ type: 'starter-package' }).filter(item => item.payload?.executable);
+  const overlay = document.createElement('div'); overlay.className = 'page-dialog template-dialog website-dialog';
+  overlay.innerHTML = '<form><h2>Start or replace Website</h2><p>This replaces the current Website as one undoable transaction.</p><div class="template-options"></div><label class="confirm-replace"><input type="checkbox"> I understand the current workspace will be replaced.</label><div class="dialog-actions"><button type="button" class="dialog-cancel">Cancel</button><button type="submit" disabled>Replace Website</button></div></form>';
+  const options = overlay.querySelector('.template-options'), confirmBox = overlay.querySelector('[type="checkbox"]'), submit = overlay.querySelector('[type="submit"]'); let selection;
+  const choices = [{ name: 'Blank / Custom Website', description: 'One empty Home page using the current Design Settings.' }, ...packages.map(item => { const resolved = resolveStarterPackage(pageTemplateLibrary, item.id, registry); return { resolved, name: item.name, description: item.description, structure: resolved.pages.map(page => page.name).join(' → ') }; })];
+  options.replaceChildren(...choices.map(choice => { const button = document.createElement('button'); button.type = 'button'; button.className = 'template-option'; button.innerHTML = `<strong>${choice.name}</strong><span>${choice.description}</span><small>${choice.structure || 'Home'}</small>`; button.onclick = () => { selection = choice; options.querySelectorAll('button').forEach(node => node.classList.toggle('selected', node === button)); submit.disabled = !confirmBox.checked; }; return button; }));
+  confirmBox.onchange = () => { submit.disabled = !confirmBox.checked || !selection; };
+  overlay.querySelector('.dialog-cancel').onclick = () => overlay.remove();
+  overlay.querySelector('form').onsubmit = event => { event.preventDefault(); if (!selection || !confirmBox.checked) return; selection.resolved ? store.replaceWebsiteFromStarter(selection.resolved, true) : store.replaceWithBlankWebsite('Untitled Website', true); overlay.remove(); };
+  document.body.append(overlay);
 }
 
 function pageActions(page) {

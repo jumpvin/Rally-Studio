@@ -1,7 +1,7 @@
 ---
 milestone-id: studio-4-m11-starter-package-site-assembly
 mode: implementation
-status: active
+status: implemented
 baseline: 504177c58cb0844e1365e2853a601afa53e0750d
 validation-level: functional
 affected-paths:
@@ -241,3 +241,12 @@ The frozen scope is Certified Starter Packages that assemble/replace one complet
 
 ## Builder Instruction
 Implement **Rally Site Studio 4.0 Milestone 11 — Starter Package Whole-Site Assembly** from this frozen contract in `jumpvin/Rally-Studio` on `master`. Make Certified `starter-package` Library items fully resolve existing Page Templates and atomically assemble an independent ordinary multi-page Website, preserve canonical Design Settings and existing object/history boundaries, protect replacement of current work, preserve Milestones 01–10, validate every functional success criterion, and return the completed milestone to Architecture for `Review`.
+
+## Implementation Evidence
+
+- Status: `implemented`; Architecture acceptance is not claimed.
+- Functional suite: 42/42 automated tests passed.
+- Framework integrity: passed with no failures.
+- Live scenario: protected Website chooser displayed Blank/Custom and two Certified packages with ordered Page summaries, required acknowledgement, and no runtime errors.
+- Implementation note: `docs/implementation/studio-4-m11.md`.
+- Release note: Added two Certified executable Starter Packages, full hierarchy resolution, fresh whole-site assembly, global Design Settings seeds, protected replacement, and atomic Website Undo/Redo.
