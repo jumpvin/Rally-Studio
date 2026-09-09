@@ -1,7 +1,7 @@
 ---
 milestone-id: studio-4-m06-edit-transactions-history
 mode: implementation
-status: active
+status: implemented
 baseline: 33dad3d0897e835765c6089c1e653b8882f49957
 validation-level: functional
 affected-paths:
@@ -192,3 +192,9 @@ The frozen scope is in-session transaction history for existing Studio 4 editing
 
 ## Builder Instruction
 Implement **Rally Site Studio 4.0 Milestone 06 — Edit Transactions & Workspace History** from this frozen contract in `jumpvin/Rally-Studio` on `master`. Replace the temporary one-level structural Undo with a coherent transaction/history boundary covering existing meaningful edits, add multi-step Undo/Redo and a compact Workspace History surface, preserve Milestones 01–05 architecture, validate every functional success criterion, and return the completed milestone to Architecture for `Review`.
+
+## Builder Implementation Result
+
+- Status: Implemented; pending Architecture review.
+- Functional validation: eighteen automated transaction/state/regression tests, JavaScript parsing, live HTTP startup/assets, Framework integrity, and v3 baseline preservation passed.
+- Release note: Replaced one-level structural Undo with a bounded 50-entry document transaction history, multi-step Undo/Redo, branch invalidation, restore-to-entry, actor/timestamp/object metadata, and an Edit-mode History drawer. See `docs/implementation/studio-4-m06.md`.
