@@ -1,7 +1,7 @@
 ---
 milestone-id: studio-4-m03-page-structure-actions
 mode: implementation
-status: active
+status: implemented
 baseline: a23661d84b0098402a40377ced84a5abb5e0d835
 validation-level: functional
 affected-paths:
@@ -194,3 +194,9 @@ The frozen scope is current-page structural editing only: reorder, registry-driv
 
 ## Builder Instruction
 Implement **Rally Site Studio 4.0 Milestone 03 — Page Structure Actions** from this frozen contract in `jumpvin/Rally-Studio` on `master`. Implement only the authorized current-page structural editing actions. Preserve the Milestone 01–02 object, registry, structured-content, selection, Context Panel and Edit/Preview boundaries. Validate every functional success criterion and return the completed milestone to Architecture for `Review`.
+
+## Builder Implementation Result
+
+- Status: Implemented; pending Architecture review.
+- Functional validation: eight store/model/registry tests, JavaScript parsing, live HTTP startup/assets, Framework integrity, and v3 baseline preservation passed.
+- Release note: Added registry-driven insertion defaults, Explorer/canvas reorder controls, Add Section, Duplicate, Hide/Show, Delete, and immediate one-level Undo through the centralized structural state boundary. See `docs/implementation/studio-4-m03.md`.
