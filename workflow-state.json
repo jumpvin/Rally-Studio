@@ -4,26 +4,25 @@
   "authorized_branch": "master",
   "framework_identity": "0.3.13-dev.24.3",
   "release_target": "4.0.0",
-  "current_milestone": "studio-4-m11-starter-package-site-assembly",
-  "current_status": "approved",
+  "current_milestone": "studio-4-m12-review-comments-conversations",
+  "current_status": "active",
   "current_build": "3.0.0",
-  "baseline": "799bfee65e404c7b2c045d7969e0c17cf2470a95",
-  "mode": "architecture",
+  "baseline": "40e7034c01dcafda23ec1193eb12d2da5e9a7f65",
+  "mode": "implementation",
   "validation_level": "functional",
   "affected_paths": [
     "studio4/**",
     "docs/implementation/**",
-    "docs/milestones/studio-4-m11-starter-package-site-assembly.md",
-    "docs/reviews/studio-4-m11-architecture-review.md",
+    "docs/milestones/studio-4-m12-review-comments-conversations.md",
     "package.json"
   ],
   "affected_surfaces": [
-    "Executable Starter Package Library items",
-    "Whole-site Starter Package resolution",
-    "New Website from Starter Package workflow",
-    "Starter Package transaction/history integration"
+    "Review mode and conversations sidebar",
+    "Comment anchors and temporary canvas pins",
+    "Conversation state and replies",
+    "Conversation navigation across Website Pages"
   ],
   "retained_evidence": [],
-  "next_owner": "architecture",
-  "next_command": "Create Milestone"
+  "next_owner": "builder",
+  "next_command": "Implement Milestone"
 }
