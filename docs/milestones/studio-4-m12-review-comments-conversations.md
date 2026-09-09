@@ -1,7 +1,7 @@
 ---
 milestone-id: studio-4-m12-review-comments-conversations
 mode: implementation
-status: active
+status: implemented
 baseline: 40e7034c01dcafda23ec1193eb12d2da5e9a7f65
 validation-level: functional
 affected-paths:
@@ -246,3 +246,12 @@ The frozen scope is contextual Website review conversations, sidebar navigation 
 
 ## Builder Instruction
 Implement **Rally Site Studio 4.0 Milestone 12 — Review Comments & Conversations** from this frozen contract in `jumpvin/Rally-Studio` on `master`. Add structured Website review conversations independent of canonical document state, implement the sidebar-plus-temporary-pins Comments mode, cross-page/context navigation, replies and approved conversation states, preserve review context when document anchors disappear, keep collaboration operations out of Website Undo/Redo history, preserve Milestones 01–11, validate every functional success criterion, and return the completed milestone to Architecture for `Review`.
+
+## Implementation Evidence
+
+- Status: `implemented`; Architecture acceptance is not claimed.
+- Functional suite: 47/47 automated tests passed.
+- Framework integrity: passed with no failures.
+- Live scenario: Comments sidebar opened and created a selected Page conversation with actor, timestamp, status, reply UI, and no runtime errors.
+- Implementation note: `docs/implementation/studio-4-m12.md`.
+- Release note: Added separate structured review conversations, resilient Page/Component anchors, cross-Page navigation, temporary canvas pins, replies, statuses, filters, and strict Website-history separation.
