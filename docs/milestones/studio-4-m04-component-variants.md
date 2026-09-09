@@ -1,7 +1,7 @@
 ---
 milestone-id: studio-4-m04-component-variants
 mode: implementation
-status: active
+status: implemented
 baseline: 65d89d39d131b52bd79f7849b87d4c9b8cb99fa4
 validation-level: functional
 affected-paths:
@@ -185,3 +185,9 @@ The frozen scope is approved presentation variants for existing registered compo
 
 ## Builder Instruction
 Implement **Rally Site Studio 4.0 Milestone 04 — Component Variants** from this frozen contract in `jumpvin/Rally-Studio` on `master`. Implement only approved definition-driven component variants and preserve the Milestone 01–03 object, registry, content, selection, structural editing and Undo boundaries. Validate every functional success criterion and return the completed milestone to Architecture for `Review`.
+
+## Builder Implementation Result
+
+- Status: Implemented; pending Architecture review.
+- Functional validation: eleven automated registry/state/regression tests, JavaScript parsing, live HTTP startup/assets, Framework integrity, and v3 baseline preservation passed.
+- Release note: Added registry-owned stable variants, instance `variantId`, live cycling/direct selection, default-first insertion, and content-preserving Hero and Services presentations. See `docs/implementation/studio-4-m04.md`.
