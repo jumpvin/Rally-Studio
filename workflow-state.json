@@ -5,8 +5,26 @@
   "framework_identity": "0.3.13-dev.24.3",
   "release_target": "4.0.0",
   "current_milestone": "studio-4-m01-foundation-vertical-slice",
-  "current_status": "instructions-created-builder-authorized",
+  "current_status": "active",
   "current_build": "3.0.0",
+  "baseline": "3088b4658193b004b2efe4f164f4d4b713ce15b4",
+  "mode": "implementation",
+  "validation_level": "structural",
+  "affected_paths": [
+    "studio4/**",
+    "docs/implementation/**",
+    "docs/milestones/studio-4-m01-foundation-vertical-slice.md",
+    "package.json",
+    "index.js"
+  ],
+  "affected_surfaces": [
+    "Studio 4 application foundation",
+    "Website/Page/Component structured object model",
+    "Component registry and rendering boundary",
+    "Design settings inheritance",
+    "Minimal Website Workspace vertical slice"
+  ],
+  "retained_evidence": [],
   "next_owner": "builder",
   "next_command": "Implement Milestone"
 }
