@@ -1,3 +1,23 @@
+---
+milestone-id: studio-4-m01-foundation-vertical-slice
+mode: implementation
+baseline: 3088b4658193b004b2efe4f164f4d4b713ce15b4
+validation-level: structural
+affected-paths:
+  - studio4/**
+  - docs/implementation/**
+  - docs/milestones/studio-4-m01-foundation-vertical-slice.md
+  - package.json
+  - index.js
+affected-surfaces:
+  - Studio 4 application foundation
+  - Website/Page/Component structured object model
+  - Component registry and rendering boundary
+  - Design settings inheritance
+  - Minimal Website Workspace vertical slice
+retained_evidence: []
+---
+
 # Rally Site Studio 4.0 — Milestone 01
 
 ## Title
