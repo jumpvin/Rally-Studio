@@ -1,7 +1,7 @@
 ---
 milestone-id: studio-4-m09-multi-page-website-management
 mode: implementation
-status: active
+status: implemented
 baseline: 2e84910632710ec51c3728ec17d1cb401e10f0b6
 validation-level: functional
 affected-paths:
@@ -249,3 +249,12 @@ The frozen scope is multi-page Website identity, navigation, and safe Page lifec
 
 ## Builder Instruction
 Implement **Rally Site Studio 4.0 Milestone 09 — Multi-Page Website Management** from this frozen contract in `jumpvin/Rally-Studio` on `master`. Evolve the single-page state into an ordered multi-page Website model, add active-page navigation plus create/rename/duplicate/reorder/protected-delete operations, integrate all existing page-scoped editing/composition/history behavior with the active Page, preserve Milestones 01–08 architecture, validate every functional success criterion, and return the completed milestone to Architecture for `Review`.
+
+## Implementation Evidence
+
+- Status: `implemented`; Architecture acceptance is not claimed.
+- Functional suite: 31/31 automated tests passed.
+- Framework integrity: passed with no failures.
+- Startup/assets: Studio 4 JavaScript and Page CSS returned HTTP 200; Studio v3 entry point remains available.
+- Implementation note: `docs/implementation/studio-4-m09.md`.
+- Release note: Added ordered multi-page Website state, active-page navigation, deterministic page lifecycle operations, protected deletion, active-page feature scoping, and atomic page history behavior.

@@ -1,0 +1,11 @@
+.page-row{margin-top:8px;padding:6px;border:1px solid transparent;border-radius:8px}
+.page-row.active{border-color:#c9c5ff;background:#f5f4ff}
+.page-select{width:100%;padding:4px;border:0;background:transparent;text-align:left;cursor:pointer}
+.page-select small{display:block;color:#7b8491}
+.page-actions{display:flex;gap:3px;margin-top:4px}
+.page-actions button{padding:3px 5px;border:0;border-radius:4px;background:#e9ebef;color:#5f6875;font-size:9px}
+.page-row>.move-controls{float:right;margin-top:-34px}
+.add-main{margin-top:8px}
+.page-dialog{position:fixed;inset:0;z-index:30;display:grid;place-items:center;background:#17203388}
+.page-dialog form{width:min(390px,calc(100vw - 32px));padding:24px;border-radius:12px;background:#fff;box-shadow:0 20px 60px #17203355}
+.page-dialog h2{margin:0 0 16px;font-size:18px}.page-dialog label{display:grid;gap:7px;font-size:12px;font-weight:700}.page-dialog input{padding:10px;border:1px solid #ccd1da;border-radius:7px;font:inherit}.page-dialog form>div{display:flex;justify-content:flex-end;gap:8px;margin-top:20px}.page-dialog button{padding:8px 12px;border:0;border-radius:7px}.page-dialog [type=submit]{color:#fff;background:#4f46e5}.page-dialog [type=submit].danger{background:#b42318}
