@@ -23,9 +23,7 @@
     "Edit and Preview modes",
     "Safe inline structured-content editing"
   ],
-  "retained_evidence": [
-    "docs/reviews/studio-4-m01-architecture-review.md"
-  ],
+  "retained_evidence": [],
   "next_owner": "builder",
   "next_command": "Implement Milestone"
 }
