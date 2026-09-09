@@ -4,26 +4,25 @@
   "authorized_branch": "master",
   "framework_identity": "0.3.13-dev.24.3",
   "release_target": "4.0.0",
-  "current_milestone": "studio-4-m07-library-registry-lifecycle",
-  "current_status": "approved",
+  "current_milestone": "studio-4-m08-executable-compositions",
+  "current_status": "active",
   "current_build": "3.0.0",
-  "baseline": "9cbb5ee7e1498d04c5098a3e34e48c2847b518f4",
-  "mode": "architecture",
+  "baseline": "2785fb9607197dcd52851d698da867bbc2cc9742",
+  "mode": "implementation",
   "validation_level": "functional",
   "affected_paths": [
     "studio4/**",
     "docs/implementation/**",
-    "docs/milestones/studio-4-m07-library-registry-lifecycle.md",
-    "docs/reviews/studio-4-m07-architecture-review.md",
+    "docs/milestones/studio-4-m08-executable-compositions.md",
     "package.json"
   ],
   "affected_surfaces": [
-    "Studio Library registry",
-    "Library object typing",
-    "Library lifecycle/maturity state",
-    "Component-definition/library integration seam"
+    "Executable Library compositions",
+    "Composition-to-component instantiation",
+    "Add Composition workflow",
+    "Composition transaction/history integration"
   ],
   "retained_evidence": [],
-  "next_owner": "architecture",
-  "next_command": "Create Milestone"
+  "next_owner": "builder",
+  "next_command": "Implement Milestone"
 }
