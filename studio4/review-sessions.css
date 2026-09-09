@@ -1,0 +1,5 @@
+.comments-dock [data-review-sessions]{display:grid;gap:8px;margin:16px 0;padding:12px;border-radius:9px;background:#f6f7f9}
+.review-heading{display:flex;justify-content:space-between;align-items:center}
+.review-heading button,.general-conversations,.review-session-list button,.review-actions button{padding:6px 8px;border:0;border-radius:6px;background:#e7e9ee}
+.general-conversations{width:100%;text-align:left}.review-session-list{display:grid;gap:4px}.review-session-list button{display:flex;justify-content:space-between}.review-session-list button.selected{color:#4f46e5;background:#e7e5ff}
+.review-summary{display:grid;gap:4px;padding-top:8px;border-top:1px solid #dfe3e8}.review-actions{display:grid;grid-template-columns:repeat(2,1fr);gap:5px}.review-actions input{grid-column:1/-1;padding:7px;border:1px solid #d8dce3;border-radius:6px}

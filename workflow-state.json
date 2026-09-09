@@ -5,10 +5,10 @@
   "framework_identity": "0.3.13-dev.24.3",
   "release_target": "4.0.0",
   "current_milestone": "studio-4-m13-review-sessions-approval-records",
-  "current_status": "active",
+  "current_status": "implemented",
   "current_build": "3.0.0",
   "baseline": "843752d1a67b5efd601eea9326a8e2464e567f45",
-  "mode": "implementation",
+  "mode": "review",
   "validation_level": "functional",
   "affected_paths": [
     "studio4/**",
@@ -24,6 +24,6 @@
     "Review summary and readiness UI"
   ],
   "retained_evidence": [],
-  "next_owner": "Builder",
-  "next_command": "Implement"
+  "next_owner": "Architecture",
+  "next_command": "Review"
 }

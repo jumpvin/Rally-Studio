@@ -1,7 +1,7 @@
 ---
 milestone-id: studio-4-m13-review-sessions-approval-records
 mode: implementation
-status: active
+status: implemented
 baseline: 843752d1a67b5efd601eea9326a8e2464e567f45
 validation-level: functional
 affected-paths:
@@ -280,3 +280,12 @@ The frozen scope is formal Review Sessions, lightweight review checkpoints, sess
 
 ## Builder Instruction
 Implement **Rally Site Studio 4.0 Milestone 13 — Review Sessions & Approval Records** from this frozen contract in `jumpvin/Rally-Studio` on `master`. Build structured Review Sessions around the existing M12 Conversation system, capture a lightweight stable Website review checkpoint without cloning a second editable Website, associate Conversations to sessions by reference, implement session summary/readiness UI, add explicit append-style Approval/revocation records that remain distinct from conversation resolution, preserve collaboration separation from Website Undo/Redo history, preserve Milestones 01–12, validate every functional success criterion, and return the completed milestone to Architecture for `Review`.
+
+## Implementation Evidence
+
+- Status: `implemented`; Architecture acceptance is not claimed.
+- Functional suite: 52/52 automated tests passed.
+- Framework integrity: passed with no failures.
+- Live scenario: created and activated a Review Session, displayed its checkpoint/readiness summary, kept approval explicit, and produced no runtime errors.
+- Implementation note: `docs/implementation/studio-4-m13.md`.
+- Release note: Added formal Review Sessions, lightweight immutable checkpoints, Session-scoped Conversations, derived readiness, and append-only approval/revocation audit records.
