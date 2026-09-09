@@ -1,7 +1,7 @@
 ---
 milestone-id: studio-4-m15-guided-review-questionnaire
 mode: implementation
-status: active
+status: implemented
 baseline: f5937fb48188d17dc802afc7c61f42e35613df9d
 validation-level: functional
 affected-paths:
@@ -195,3 +195,11 @@ The frozen scope is a guided Website-review questionnaire inside Review Sessions
 
 ## Builder Instruction
 Implement **Rally Site Studio 4.0 Milestone 15 — Guided Review Questionnaire** from this frozen contract in `jumpvin/Rally-Studio` on `master`. Add structured Review Question/Response state inside existing Review Sessions, provide a concise guided Website-review flow with required/optional questions and progress, integrate required-question completion into explicit approval gating without conflating it with Conversations or Tasks, keep questionnaire state outside Website Undo/Redo, preserve Milestones 01–14, validate every functional success criterion, and return the completed milestone to Architecture for `Review`.
+
+## Implementation Evidence
+
+- Versioned system questionnaire with ordered yes/no, single-choice, and free-text questions.
+- Structured responses with stable identity, actor, and creation/update timestamps.
+- Derived draft/in-progress/completed and required-question progress in the Review Session surface.
+- Explicit approval gating with recorded questionnaire and Conversation override blocker categories.
+- 61 passing functional tests plus live browser verification of start, answer persistence, and progress.
