@@ -1,7 +1,7 @@
 ---
 milestone-id: studio-4-m05-responsive-preview-overrides
 mode: implementation
-status: active
+status: implemented
 baseline: fc7fcd7c03b190928a078edf42b0c48f6c3b62c1
 validation-level: functional
 affected-paths:
@@ -195,3 +195,9 @@ The frozen scope is responsive preview plus constrained instance-level responsiv
 
 ## Builder Instruction
 Implement **Rally Site Studio 4.0 Milestone 05 — Responsive Preview & Constrained Overrides** from this frozen contract in `jumpvin/Rally-Studio` on `master`. Preserve the Milestone 01–04 object, content, variant, structural editing and Undo boundaries. Implement only the authorized responsive preview and constrained override capabilities, validate every functional success criterion, and return the completed milestone to Architecture for `Review`.
+
+## Builder Implementation Result
+
+- Status: Implemented; pending Architecture review.
+- Functional validation: fifteen automated state/contract/regression tests, JavaScript parsing, live HTTP startup/assets, Framework integrity, and v3 baseline preservation passed.
+- Release note: Added Desktop/Tablet/Mobile preview state, definition-driven constrained responsive controls, explicit per-device instance overrides, reset behavior, device visibility, layout/alignment/spacing choices, and Mobile heading layering. See `docs/implementation/studio-4-m05.md`.
