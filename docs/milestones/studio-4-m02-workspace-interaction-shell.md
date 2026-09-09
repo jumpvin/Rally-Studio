@@ -15,8 +15,7 @@ affected-surfaces:
   - Component selection and Context Panel
   - Edit and Preview modes
   - Safe inline structured-content editing
-retained-evidence:
-  - docs/reviews/studio-4-m01-architecture-review.md
+retained-evidence: []
 ---
 
 # Rally Site Studio 4.0 — Milestone 02
