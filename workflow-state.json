@@ -5,15 +5,16 @@
   "framework_identity": "0.3.13-dev.24.3",
   "release_target": "4.0.0",
   "current_milestone": "studio-4-m06-edit-transactions-history",
-  "current_status": "implemented",
+  "current_status": "approved",
   "current_build": "3.0.0",
-  "baseline": "33dad3d0897e835765c6089c1e653b8882f49957",
-  "mode": "review",
+  "baseline": "8acefa95c08fad4c134a7236832458b28d7f53c7",
+  "mode": "architecture",
   "validation_level": "functional",
   "affected_paths": [
     "studio4/**",
     "docs/implementation/**",
     "docs/milestones/studio-4-m06-edit-transactions-history.md",
+    "docs/reviews/studio-4-m06-architecture-review.md",
     "package.json"
   ],
   "affected_surfaces": [
@@ -23,6 +24,6 @@
     "Restoreable structured page state"
   ],
   "retained_evidence": [],
-  "next_owner": "Architecture",
-  "next_command": "Review"
+  "next_owner": "architecture",
+  "next_command": "Create Milestone"
 }
