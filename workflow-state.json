@@ -4,26 +4,25 @@
   "authorized_branch": "master",
   "framework_identity": "0.3.13-dev.24.3",
   "release_target": "4.0.0",
-  "current_milestone": "studio-4-m09-multi-page-website-management",
-  "current_status": "approved",
+  "current_milestone": "studio-4-m10-executable-page-templates",
+  "current_status": "active",
   "current_build": "3.0.0",
-  "baseline": "daebc85592e5aee4e5c70da368cea61e1a539335",
-  "mode": "architecture",
+  "baseline": "1aa46a471dd112798877424eb969925cbb745f31",
+  "mode": "implementation",
   "validation_level": "functional",
   "affected_paths": [
     "studio4/**",
     "docs/implementation/**",
-    "docs/milestones/studio-4-m09-multi-page-website-management.md",
-    "docs/reviews/studio-4-m09-architecture-review.md",
+    "docs/milestones/studio-4-m10-executable-page-templates.md",
     "package.json"
   ],
   "affected_surfaces": [
-    "Website to Page collection model",
-    "Page switching and page-first navigation",
-    "Page creation duplication rename ordering and deletion",
-    "Multi-page transaction/history integration"
+    "Executable Library Page Templates",
+    "Page Template resolution and instantiation",
+    "Create Page from Template workflow",
+    "Page-template transaction/history integration"
   ],
   "retained_evidence": [],
-  "next_owner": "architecture",
-  "next_command": "Create Milestone"
+  "next_owner": "builder",
+  "next_command": "Implement Milestone"
 }
