@@ -5,15 +5,16 @@
   "framework_identity": "0.3.13-dev.24.3",
   "release_target": "4.0.0",
   "current_milestone": "studio-4-m17-discovery-questionnaire-foundation",
-  "current_status": "implemented",
+  "current_status": "approved",
   "current_build": "3.0.0",
-  "baseline": "2d9975e15dcf110ee489ed22bfd269b8b7cdc834",
-  "mode": "review",
+  "baseline": "b2f793a39c49550a19330817eff17f8ca4c095bd",
+  "mode": "architecture",
   "validation_level": "functional",
   "affected_paths": [
     "studio4/**",
     "docs/implementation/**",
     "docs/milestones/studio-4-m17-discovery-questionnaire-foundation.md",
+    "docs/reviews/studio-4-m17-architecture-review.md",
     "package.json"
   ],
   "affected_surfaces": [
@@ -23,6 +24,6 @@
     "Discovery-to-recommendation input boundary"
   ],
   "retained_evidence": [],
-  "next_owner": "Architecture",
-  "next_command": "Review"
+  "next_owner": "architecture",
+  "next_command": "Create Milestone"
 }
