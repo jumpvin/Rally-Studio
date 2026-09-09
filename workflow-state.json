@@ -4,26 +4,25 @@
   "authorized_branch": "master",
   "framework_identity": "0.3.13-dev.24.3",
   "release_target": "4.0.0",
-  "current_milestone": "studio-4-m08-executable-compositions",
-  "current_status": "approved",
+  "current_milestone": "studio-4-m09-multi-page-website-management",
+  "current_status": "active",
   "current_build": "3.0.0",
-  "baseline": "017c5be1d6a2a585f7514a7b9e321beae8a49d78",
-  "mode": "architecture",
+  "baseline": "2e84910632710ec51c3728ec17d1cb401e10f0b6",
+  "mode": "implementation",
   "validation_level": "functional",
   "affected_paths": [
     "studio4/**",
     "docs/implementation/**",
-    "docs/milestones/studio-4-m08-executable-compositions.md",
-    "docs/reviews/studio-4-m08-architecture-review.md",
+    "docs/milestones/studio-4-m09-multi-page-website-management.md",
     "package.json"
   ],
   "affected_surfaces": [
-    "Executable Library compositions",
-    "Composition-to-component instantiation",
-    "Add Composition workflow",
-    "Composition transaction/history integration"
+    "Website to Page collection model",
+    "Page switching and page-first navigation",
+    "Page creation duplication rename ordering and deletion",
+    "Multi-page transaction/history integration"
   ],
   "retained_evidence": [],
-  "next_owner": "architecture",
-  "next_command": "Create Milestone"
+  "next_owner": "builder",
+  "next_command": "Implement Milestone"
 }
