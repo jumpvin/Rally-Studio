@@ -4,26 +4,24 @@
   "authorized_branch": "master",
   "framework_identity": "0.3.13-dev.24.3",
   "release_target": "4.0.0",
-  "current_milestone": "studio-4-m01-foundation-vertical-slice",
-  "current_status": "approved",
+  "current_milestone": "studio-4-m02-workspace-interaction-shell",
+  "current_status": "milestone-created",
   "current_build": "3.0.0",
-  "baseline": "9197e7f15d820fb3ada449e1c4485cf56dea1d80",
+  "baseline": "cfa17990936622cece01f3bfac3e02d992f60e41",
   "mode": "architecture",
-  "validation_level": "structural",
+  "validation_level": "functional",
   "affected_paths": [
     "studio4/**",
     "docs/implementation/**",
-    "docs/milestones/studio-4-m01-foundation-vertical-slice.md",
-    "docs/reviews/studio-4-m01-architecture-review.md",
-    "package.json",
-    "index.js"
+    "docs/milestones/studio-4-m02-workspace-interaction-shell.md",
+    "package.json"
   ],
   "affected_surfaces": [
-    "Studio 4 application foundation",
-    "Website/Page/Component structured object model",
-    "Component registry and rendering boundary",
-    "Design settings inheritance",
-    "Minimal Website Workspace vertical slice"
+    "Website Workspace shell",
+    "Page-first Explorer",
+    "Component selection and Context Panel",
+    "Edit and Preview modes",
+    "Safe inline structured-content editing"
   ],
   "retained_evidence": [
     "docs/reviews/studio-4-m01-architecture-review.md"
