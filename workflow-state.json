@@ -4,26 +4,25 @@
   "authorized_branch": "master",
   "framework_identity": "0.3.13-dev.24.3",
   "release_target": "4.0.0",
-  "current_milestone": "studio-4-m15-guided-review-questionnaire",
-  "current_status": "approved",
+  "current_milestone": "studio-4-m16-review-version-history",
+  "current_status": "active",
   "current_build": "3.0.0",
-  "baseline": "a1135ab7196411d76fa44943b82993d1edcaa84e",
-  "mode": "architecture",
+  "baseline": "f111855995799df5779b58e0e63d0e28885d9b51",
+  "mode": "implementation",
   "validation_level": "functional",
   "affected_paths": [
     "studio4/**",
     "docs/implementation/**",
-    "docs/milestones/studio-4-m15-guided-review-questionnaire.md",
-    "docs/reviews/studio-4-m15-architecture-review.md",
+    "docs/milestones/studio-4-m16-review-version-history.md",
     "package.json"
   ],
   "affected_surfaces": [
-    "Review Session guided questionnaire",
-    "Review question definitions",
-    "Review responses and completion state",
-    "Review readiness summary"
+    "Review Version records",
+    "Review Session/version linkage",
+    "Version timeline and comparison metadata",
+    "Restore-from-review-version workflow"
   ],
   "retained_evidence": [],
-  "next_owner": "architecture",
-  "next_command": "Create Milestone"
+  "next_owner": "Builder",
+  "next_command": "Implement Milestone"
 }
