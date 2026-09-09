@@ -5,15 +5,16 @@
   "framework_identity": "0.3.13-dev.24.3",
   "release_target": "4.0.0",
   "current_milestone": "studio-4-m01-foundation-vertical-slice",
-  "current_status": "implemented",
+  "current_status": "approved",
   "current_build": "3.0.0",
-  "baseline": "3088b4658193b004b2efe4f164f4d4b713ce15b4",
-  "mode": "review",
+  "baseline": "9197e7f15d820fb3ada449e1c4485cf56dea1d80",
+  "mode": "architecture",
   "validation_level": "structural",
   "affected_paths": [
     "studio4/**",
     "docs/implementation/**",
     "docs/milestones/studio-4-m01-foundation-vertical-slice.md",
+    "docs/reviews/studio-4-m01-architecture-review.md",
     "package.json",
     "index.js"
   ],
@@ -24,7 +25,9 @@
     "Design settings inheritance",
     "Minimal Website Workspace vertical slice"
   ],
-  "retained_evidence": [],
-  "next_owner": "Architecture",
-  "next_command": "Review"
+  "retained_evidence": [
+    "docs/reviews/studio-4-m01-architecture-review.md"
+  ],
+  "next_owner": "architecture",
+  "next_command": "Create Instructions"
 }
