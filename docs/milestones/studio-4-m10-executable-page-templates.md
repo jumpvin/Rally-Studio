@@ -1,7 +1,7 @@
 ---
 milestone-id: studio-4-m10-executable-page-templates
 mode: implementation
-status: active
+status: implemented
 baseline: 1aa46a471dd112798877424eb969925cbb745f31
 validation-level: functional
 affected-paths:
@@ -204,3 +204,12 @@ The frozen scope is Certified executable Page Templates that instantiate one ind
 
 ## Builder Instruction
 Implement **Rally Site Studio 4.0 Milestone 10 — Executable Page Templates** from this frozen contract in `jumpvin/Rally-Studio` on `master`. Add Certified declarative Page Templates, resolve/flatten them through the existing Library/Composition/Component Registry boundaries, evolve Create Page to offer Blank or curated templates, instantiate one ordinary independent Page atomically with history, preserve Milestones 01–09 architecture, validate every functional success criterion, and return the completed milestone to Architecture for `Review`.
+
+## Implementation Evidence
+
+- Status: `implemented`; Architecture acceptance is not claimed.
+- Functional suite: 37/37 automated tests passed.
+- Framework integrity: passed with no failures.
+- Live scenario: Company Story resolved Composition plus direct Component members into one active Page with one history entry and no runtime errors.
+- Implementation note: `docs/implementation/studio-4-m10.md`.
+- Release note: Added three Certified executable Page Templates, bounded recipe flattening, curated Blank/Template Page creation, independent provenance, and atomic template-page history.

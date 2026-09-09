@@ -82,6 +82,19 @@ export function createStudioStore(initial) {
       publish({ ...state, workspace: { ...state.workspace, activePageId: id, selectedComponentId: null } });
       return id;
     },
+    createPageFromTemplate(resolved, requestedName) {
+      if (!resolved?.item?.id || !resolved?.members?.length) throw new Error('Resolved page template required');
+      const finalName = uniqueName(String(requestedName || resolved.defaultPageName).trim() || resolved.defaultPageName);
+      const pageId = `page-${Date.now().toString(36)}-${++sequence}`;
+      const instanceIds = resolved.members.map(member => `instance-${member.definitionType}-${Date.now().toString(36)}-${++sequence}`);
+      transact(`Create page from template: ${resolved.item.name}`, pageId, next => {
+        resolved.members.forEach((member, index) => { const id = instanceIds[index]; next.componentInstances[id] = { id, ...clone(member) }; });
+        next.pages[pageId] = { id: pageId, websiteId: next.website.id, name: finalName, slug: uniqueSlug(finalName, null, next), componentInstanceIds: instanceIds, sourceLibraryItemId: resolved.item.id, sourceLibraryVersion: resolved.item.version };
+        next.website.pageIds.push(pageId);
+      });
+      publish({ ...state, workspace: { ...state.workspace, activePageId: pageId, selectedComponentId: null } });
+      return pageId;
+    },
     renamePage(pageId, name) {
       if (!state.pages[pageId]) throw new Error(`Unknown page: ${pageId}`);
       const finalName = String(name).trim(); if (!finalName) throw new Error('Page name is required');

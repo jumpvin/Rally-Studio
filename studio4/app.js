@@ -3,10 +3,14 @@ import { createComponentRegistry } from './component-registry.js';
 import { componentDefinitions } from './components.js';
 import { activePage, orderedInstances } from './model.js';
 import { seedState } from './seed.js';
+import { createLibraryRegistry } from './library-registry.js';
+import { librarySeeds } from './library-seeds.js';
+import { resolvePageTemplate } from './page-template-service.js';
 
 for (const href of ['/studio4/responsive.css','/studio4/history.css','/studio4/library.css']) document.head.append(Object.assign(document.createElement('link'), { rel: 'stylesheet', href }));
 const store = createStudioStore(seedState), registry = createComponentRegistry(), $ = selector => document.querySelector(selector), canvas = $('#page-canvas');
 componentDefinitions.forEach(definition => registry.register(definition));
+const pageTemplateLibrary = createLibraryRegistry(); librarySeeds.forEach(item => pageTemplateLibrary.register(item));
 let insertionIndex = 0;
 const read = (object, path) => path.split('.').reduce((value, key) => value?.[key], object);
 
@@ -51,6 +55,19 @@ function openPageDialog({ title, value = '', danger = false, action }) {
   input?.focus(); input?.select();
 }
 
+function openCreatePageDialog() {
+  const templates = pageTemplateLibrary.query({ type: 'composition' }).filter(item => item.payload?.kind === 'page-template' && item.payload.executable);
+  const overlay = document.createElement('div'); overlay.className = 'page-dialog template-dialog';
+  overlay.innerHTML = '<form><h2>Create page</h2><p>Start blank or use a Certified template.</p><div class="template-options"></div><label>Page name<input value="Untitled Page"></label><div class="dialog-actions"><button type="button" class="dialog-cancel">Cancel</button><button type="submit">Create page</button></div></form>';
+  const options = overlay.querySelector('.template-options'), input = overlay.querySelector('input'); let selection;
+  const choices = [{ name: 'Blank Page', description: 'An empty page ready for sections.', structure: 'No sections' }, ...templates.map(item => { const resolved = resolvePageTemplate(pageTemplateLibrary, item.id, registry); return { resolved, name: item.name, description: item.description, structure: resolved.members.map(member => registry.resolve(member.definitionType).name).join(' → ') }; })];
+  selection = choices[0];
+  options.replaceChildren(...choices.map((choice, index) => { const button = document.createElement('button'); button.type = 'button'; button.className = `template-option ${index === 0 ? 'selected' : ''}`; button.innerHTML = `<strong>${choice.name}</strong><span>${choice.description}</span><small>${choice.structure}</small>`; button.onclick = () => { selection = choice; options.querySelectorAll('button').forEach(node => node.classList.toggle('selected', node === button)); input.value = choice.resolved?.defaultPageName || 'Untitled Page'; }; return button; }));
+  overlay.querySelector('.dialog-cancel').onclick = () => overlay.remove();
+  overlay.querySelector('form').onsubmit = event => { event.preventDefault(); selection.resolved ? store.createPageFromTemplate(selection.resolved, input.value) : store.createPage(input.value); overlay.remove(); };
+  document.body.append(overlay); input.focus(); input.select();
+}
+
 function pageActions(page) {
   const actions = document.createElement('div'); actions.className = 'page-actions';
   const rename = document.createElement('button'); rename.textContent = 'Rename'; rename.title = 'Rename page'; rename.onclick = event => { event.stopPropagation(); openPageDialog({ title: 'Rename page', value: page.name, action: name => store.renamePage(page.id, name) }); };
@@ -91,5 +108,5 @@ function renderPage(state) {
 function render(state) { document.body.dataset.mode = state.workspace.mode; document.querySelectorAll('[data-mode]').forEach(button => button.classList.toggle('active', button.dataset.mode === state.workspace.mode)); document.querySelectorAll('[data-device]').forEach(button => button.classList.toggle('active', button.dataset.device === state.workspace.previewDevice)); explorer(state); renderPage(state); context(state); }
 function openChooser(index) { insertionIndex = index; $('#add-chooser').hidden = false; }
 $('#definition-list').replaceChildren(...registry.list().map(definition => { const button = document.createElement('button'); button.textContent = definition.name; button.onclick = () => { store.insertComponent(definition, insertionIndex); $('#add-chooser').hidden = true; }; return button; }));
-document.querySelectorAll('[data-mode]').forEach(button => button.onclick = () => store.setMode(button.dataset.mode)); document.querySelectorAll('[data-device]').forEach(button => button.onclick = () => store.setPreviewDevice(button.dataset.device)); $('[data-add-index]').onclick = () => openChooser(store.getActivePage().componentInstanceIds.length); $('#add-page').onclick = () => openPageDialog({ title: 'Create page', value: 'Untitled Page', action: name => store.createPage(name) }); $('#close-chooser').onclick = () => $('#add-chooser').hidden = true; $('#close-context').onclick = () => store.selectComponent(null); $('#duplicate').onclick = () => store.duplicateComponent(store.getState().workspace.selectedComponentId); $('#toggle-hidden').onclick = () => { const state = store.getState(), id = state.workspace.selectedComponentId; store.setComponentHidden(id, !state.componentInstances[id].hidden); }; $('#delete').onclick = () => store.deleteComponent(store.getState().workspace.selectedComponentId); $('#undo').onclick = () => store.undo();
+document.querySelectorAll('[data-mode]').forEach(button => button.onclick = () => store.setMode(button.dataset.mode)); document.querySelectorAll('[data-device]').forEach(button => button.onclick = () => store.setPreviewDevice(button.dataset.device)); $('[data-add-index]').onclick = () => openChooser(store.getActivePage().componentInstanceIds.length); $('#add-page').onclick = openCreatePageDialog; $('#close-chooser').onclick = () => $('#add-chooser').hidden = true; $('#close-context').onclick = () => store.selectComponent(null); $('#duplicate').onclick = () => store.duplicateComponent(store.getState().workspace.selectedComponentId); $('#toggle-hidden').onclick = () => { const state = store.getState(), id = state.workspace.selectedComponentId; store.setComponentHidden(id, !state.componentInstances[id].hidden); }; $('#delete').onclick = () => store.deleteComponent(store.getState().workspace.selectedComponentId); $('#undo').onclick = () => store.undo();
 store.subscribe(render); render(store.getState());
