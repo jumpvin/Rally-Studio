@@ -5,15 +5,16 @@
   "framework_identity": "0.3.13-dev.24.3",
   "release_target": "4.0.0",
   "current_milestone": "studio-4-m15-guided-review-questionnaire",
-  "current_status": "implemented",
+  "current_status": "approved",
   "current_build": "3.0.0",
-  "baseline": "f5937fb48188d17dc802afc7c61f42e35613df9d",
-  "mode": "review",
+  "baseline": "a1135ab7196411d76fa44943b82993d1edcaa84e",
+  "mode": "architecture",
   "validation_level": "functional",
   "affected_paths": [
     "studio4/**",
     "docs/implementation/**",
     "docs/milestones/studio-4-m15-guided-review-questionnaire.md",
+    "docs/reviews/studio-4-m15-architecture-review.md",
     "package.json"
   ],
   "affected_surfaces": [
@@ -23,6 +24,6 @@
     "Review readiness summary"
   ],
   "retained_evidence": [],
-  "next_owner": "Architecture",
-  "next_command": "Review"
+  "next_owner": "architecture",
+  "next_command": "Create Milestone"
 }
