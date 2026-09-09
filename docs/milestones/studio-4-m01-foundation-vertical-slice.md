@@ -1,6 +1,7 @@
 ---
 milestone-id: studio-4-m01-foundation-vertical-slice
 mode: implementation
+status: implemented
 baseline: 3088b4658193b004b2efe4f164f4d4b713ce15b4
 validation-level: structural
 affected-paths:
@@ -145,3 +146,10 @@ Builder returns:
 
 ## Copyable Builder Instruction
 Implement **Rally Site Studio 4.0 Milestone 01 — Studio 4 Foundation Vertical Slice** from `docs/milestones/studio-4-m01-foundation-vertical-slice.md` in `jumpvin/Rally-Studio` on the authorized `master` branch. Follow the milestone exactly. Build only the durable Website -> Page -> Component Instance -> Design Settings vertical slice, component registry, structured content boundary, and minimal Website Workspace needed to prove the architecture. Preserve Studio v3 as reference. Do not implement later roadmap systems. Validate the success criteria, document the model/registry/state seam, and return the completed work to Architecture for `Review`.
+
+## Builder Implementation Result
+
+- Status: Implemented; pending Architecture review.
+- Entry point: `/studio4/` via `node index.js` (default `http://localhost:4173/`).
+- Validation: Structural; JavaScript parse, automated model/registry/state tests, live HTTP startup/assets, Framework integrity, and v3 baseline preservation passed.
+- Release note: Added the Studio 4 foundation vertical slice without replacing Studio v3. See `docs/implementation/studio-4-m01.md` for object shapes, registry contract, migration seam, validation procedure, and limitations.

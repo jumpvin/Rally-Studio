@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "test": "node --test studio4/tests/*.test.mjs",
+    "validate": "node --check index.js && node --check studio4/app.js && node --test studio4/tests/*.test.mjs"
   },
   "private": true
 }
