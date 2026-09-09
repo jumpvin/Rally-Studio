@@ -4,26 +4,25 @@
   "authorized_branch": "master",
   "framework_identity": "0.3.13-dev.24.3",
   "release_target": "4.0.0",
-  "current_milestone": "studio-4-m14-conversation-task-handoff",
-  "current_status": "approved",
+  "current_milestone": "studio-4-m15-guided-review-questionnaire",
+  "current_status": "active",
   "current_build": "3.0.0",
-  "baseline": "20ee65025a23542feed5b9415e1f6d9e3afef583",
-  "mode": "architecture",
+  "baseline": "f5937fb48188d17dc802afc7c61f42e35613df9d",
+  "mode": "implementation",
   "validation_level": "functional",
   "affected_paths": [
     "studio4/**",
     "docs/implementation/**",
-    "docs/milestones/studio-4-m14-conversation-task-handoff.md",
-    "docs/reviews/studio-4-m14-architecture-review.md",
+    "docs/milestones/studio-4-m15-guided-review-questionnaire.md",
     "package.json"
   ],
   "affected_surfaces": [
-    "Review Conversation to Task conversion",
-    "Task lifecycle and status",
-    "Conversation/Review Session task references",
-    "Task list and navigation"
+    "Review Session guided questionnaire",
+    "Review question definitions",
+    "Review responses and completion state",
+    "Review readiness summary"
   ],
   "retained_evidence": [],
-  "next_owner": "architecture",
-  "next_command": "Create Milestone"
+  "next_owner": "Builder",
+  "next_command": "Implement Milestone"
 }
