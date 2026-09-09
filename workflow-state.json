@@ -5,15 +5,16 @@
   "framework_identity": "0.3.13-dev.24.3",
   "release_target": "4.0.0",
   "current_milestone": "studio-4-m11-starter-package-site-assembly",
-  "current_status": "implemented",
+  "current_status": "approved",
   "current_build": "3.0.0",
-  "baseline": "504177c58cb0844e1365e2853a601afa53e0750d",
-  "mode": "review",
+  "baseline": "799bfee65e404c7b2c045d7969e0c17cf2470a95",
+  "mode": "architecture",
   "validation_level": "functional",
   "affected_paths": [
     "studio4/**",
     "docs/implementation/**",
     "docs/milestones/studio-4-m11-starter-package-site-assembly.md",
+    "docs/reviews/studio-4-m11-architecture-review.md",
     "package.json"
   ],
   "affected_surfaces": [
@@ -23,6 +24,6 @@
     "Starter Package transaction/history integration"
   ],
   "retained_evidence": [],
-  "next_owner": "Architecture",
-  "next_command": "Review"
+  "next_owner": "architecture",
+  "next_command": "Create Milestone"
 }
