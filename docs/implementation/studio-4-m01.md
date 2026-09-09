@@ -28,3 +28,5 @@ Future v3 adoption should use adapters that transform known v3 component/pattern
 ## Validation and limitations
 
 The slice includes Hero, Services, and CTA definitions. Primary color, secondary color, radius, and spacing controls update connected components immediately. It intentionally omits persistence infrastructure, editing, variants, page management, library UI, review, deployment, and later-roadmap systems. The in-memory store is the application boundary; a persistence adapter is future scope.
+
+Milestone 02 subsequently adds bounded selection and structured-content editing while preserving this foundation.

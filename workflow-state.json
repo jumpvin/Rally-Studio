@@ -5,10 +5,10 @@
   "framework_identity": "0.3.13-dev.24.3",
   "release_target": "4.0.0",
   "current_milestone": "studio-4-m02-workspace-interaction-shell",
-  "current_status": "active",
+  "current_status": "implemented",
   "current_build": "3.0.0",
   "baseline": "cfa17990936622cece01f3bfac3e02d992f60e41",
-  "mode": "implementation",
+  "mode": "review",
   "validation_level": "functional",
   "affected_paths": [
     "studio4/**",
@@ -24,6 +24,6 @@
     "Safe inline structured-content editing"
   ],
   "retained_evidence": [],
-  "next_owner": "builder",
-  "next_command": "Implement Milestone"
+  "next_owner": "Architecture",
+  "next_command": "Review"
 }

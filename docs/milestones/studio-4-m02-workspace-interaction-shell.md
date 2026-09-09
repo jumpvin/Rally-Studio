@@ -1,7 +1,7 @@
 ---
 milestone-id: studio-4-m02-workspace-interaction-shell
 mode: implementation
-status: active
+status: implemented
 baseline: cfa17990936622cece01f3bfac3e02d992f60e41
 validation-level: functional
 affected-paths:
@@ -176,3 +176,10 @@ The frozen scope of Milestone 02 is the Website Workspace interaction shell: pag
 
 ## Builder Instruction
 Implement **Rally Site Studio 4.0 Milestone 02 — Website Workspace Interaction Shell** from this frozen contract in `jumpvin/Rally-Studio` on `master`. Implement only the authorized interaction shell and validate every functional success criterion. Preserve the Milestone 01 architecture and Studio v3 reference material. Do not implement later Stage 2 or roadmap capabilities. Return the completed milestone to Architecture for `Review`.
+
+## Builder Implementation Result
+
+- Status: Implemented; pending Architecture review.
+- Entry point: `/studio4/` using `node index.js`.
+- Functional validation: store/registry tests, selection and editing contracts, Edit/Preview transitions, live HTTP startup/assets, Framework integrity, and v3 baseline preservation passed.
+- Release note: Added the Page-first Explorer, shared canvas/Explorer selection, metadata-driven Context Panel, Edit/Preview modes, and inline/context structured-content editing. See `docs/implementation/studio-4-m02.md`.

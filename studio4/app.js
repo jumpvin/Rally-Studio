@@ -1,32 +1,8 @@
-import { createStudioStore } from './state-store.js';
-import { createComponentRegistry } from './component-registry.js';
-import { componentDefinitions } from './components.js';
-import { orderedInstances } from './model.js';
-import { seedState } from './seed.js';
-
-const store = createStudioStore(seedState);
-const registry = createComponentRegistry();
-componentDefinitions.forEach((definition) => registry.register(definition));
-const canvas = document.querySelector('#page-canvas');
-const identity = document.querySelector('#workspace-identity');
-
-function render(state) {
-  const settings = state.designSettings;
-  for (const [name, value] of Object.entries({ '--primary': settings.primaryColor, '--secondary': settings.secondaryColor, '--radius': `${settings.radius}px`, '--space': `${settings.spacing}px`, '--font': settings.fontFamily })) canvas.style.setProperty(name, value);
-  identity.textContent = `${state.website.name} / ${state.page.name}`;
-  canvas.replaceChildren(...orderedInstances(state).map((instance) => {
-    const node = registry.resolve(instance.definitionType).render(instance.content, settings);
-    node.dataset.instanceId = instance.id;
-    node.dataset.definitionType = instance.definitionType;
-    return node;
-  }));
-}
-
-document.querySelectorAll('[data-setting]').forEach((control) => control.addEventListener('input', () => {
-  const value = control.type === 'range' ? Number(control.value) : control.value;
-  store.updateDesignSettings({ [control.dataset.setting]: value });
-  const output = control.parentElement.querySelector('output');
-  if (output) output.value = value;
-}));
-store.subscribe(render);
-render(store.getState());
+import {createStudioStore} from './state-store.js';import {createComponentRegistry} from './component-registry.js';import {componentDefinitions} from './components.js';import {orderedInstances} from './model.js';import {seedState} from './seed.js';
+const store=createStudioStore(seedState);const registry=createComponentRegistry();componentDefinitions.forEach(definition=>registry.register(definition));const $=selector=>document.querySelector(selector);const canvas=$('#page-canvas');
+const readPath=(source,path)=>path.split('.').reduce((value,part)=>value?.[part],source);
+function renderExplorer(state){$('#workspace-identity').textContent=`${state.website.name} / ${state.page.name}`;$('#page-name').textContent=state.page.name;$('#component-list').replaceChildren(...orderedInstances(state).map(instance=>{const definition=registry.resolve(instance.definitionType);const button=document.createElement('button');button.className=instance.id===state.workspace.selectedComponentId?'tree-item component-item selected':'tree-item component-item';button.dataset.instanceId=instance.id;const name=document.createElement('span');name.textContent=definition.name;const id=document.createElement('small');id.textContent=instance.id;button.append(name,id);button.addEventListener('click',()=>{store.selectComponent(instance.id);document.querySelector(`[data-instance-id="${instance.id}"]`)?.scrollIntoView({behavior:'smooth',block:'center'})});return button}))}
+function renderContextPanel(state){const panel=$('#context-panel');const instance=state.componentInstances[state.workspace.selectedComponentId];panel.hidden=!instance||state.workspace.mode==='preview';$('#context-empty').hidden=Boolean(instance)||state.workspace.mode==='preview';if(!instance||state.workspace.mode==='preview')return;const definition=registry.resolve(instance.definitionType);$('#context-title').textContent=definition.name;$('#context-id').textContent=instance.id;$('#context-form').replaceChildren(...definition.editableFields.map(field=>{const label=document.createElement('label');label.textContent=field.label;const control=document.createElement(field.multiline?'textarea':'input');control.value=readPath(instance.content,field.path);control.addEventListener('change',()=>store.updateComponentContent(instance.id,field.path,control.value));label.append(control);return label}))}
+function renderCanvas(state){const settings=state.designSettings;for(const[name,value]of Object.entries({'--primary':settings.primaryColor,'--secondary':settings.secondaryColor,'--radius':`${settings.radius}px`,'--space':`${settings.spacing}px`,'--font':settings.fontFamily}))canvas.style.setProperty(name,value);canvas.classList.toggle('preview-mode',state.workspace.mode==='preview');canvas.replaceChildren(...orderedInstances(state).map(instance=>{const node=registry.resolve(instance.definitionType).render(instance.content,settings);node.dataset.instanceId=instance.id;node.classList.toggle('selected',instance.id===state.workspace.selectedComponentId);if(state.workspace.mode==='edit'){node.addEventListener('click',event=>{event.preventDefault();if(state.workspace.selectedComponentId!==instance.id)store.selectComponent(instance.id)});node.querySelectorAll('[data-edit-field]').forEach(editable=>{editable.contentEditable='true';editable.spellcheck=true;editable.addEventListener('click',event=>event.stopPropagation());editable.addEventListener('pointerdown',event=>{if(state.workspace.selectedComponentId!==instance.id){event.preventDefault();const field=editable.dataset.editField;store.selectComponent(instance.id);queueMicrotask(()=>document.querySelector(`[data-instance-id="${instance.id}"] [data-edit-field="${field}"]`)?.focus())}});editable.addEventListener('blur',()=>store.updateComponentContent(instance.id,editable.dataset.editField,editable.textContent.trim()))})}return node}))}
+function render(state){document.body.dataset.mode=state.workspace.mode;document.querySelectorAll('[data-mode]').forEach(button=>button.classList.toggle('active',button.dataset.mode===state.workspace.mode));renderExplorer(state);renderCanvas(state);renderContextPanel(state)}
+document.querySelectorAll('[data-mode]').forEach(button=>button.addEventListener('click',()=>store.setMode(button.dataset.mode)));$('#close-context').addEventListener('click',()=>store.selectComponent(null));document.querySelectorAll('[data-setting]').forEach(control=>control.addEventListener('input',()=>{const value=control.type==='range'?Number(control.value):control.value;store.updateDesignSettings({[control.dataset.setting]:value});const output=control.parentElement.querySelector('output');if(output)output.value=value}));store.subscribe(render);render(store.getState());

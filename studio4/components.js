@@ -1,12 +1,6 @@
-function element(tag, className, text) {
-  const node = document.createElement(tag);
-  if (className) node.className = className;
-  if (text) node.textContent = text;
-  return node;
-}
-
-export const componentDefinitions = [
-  { type: 'hero', name: 'Hero', contentSchema: ['eyebrow', 'heading', 'body', 'actionLabel'], render(content) { const root = element('section', 'component hero'); root.append(element('p', 'eyebrow', content.eyebrow), element('h1', '', content.heading), element('p', 'lede', content.body), element('a', 'button', content.actionLabel)); return root; } },
-  { type: 'services', name: 'Services', contentSchema: ['heading', 'items'], render(content) { const root = element('section', 'component services'); root.append(element('p', 'eyebrow', 'What we do'), element('h2', '', content.heading)); const grid = element('div', 'service-grid'); content.items.forEach((item) => { const card = element('article', 'service-card'); card.append(element('h3', '', item.title), element('p', '', item.body)); grid.append(card); }); root.append(grid); return root; } },
-  { type: 'cta', name: 'Call to action', contentSchema: ['heading', 'body', 'actionLabel'], render(content) { const root = element('section', 'component cta'); const copy = element('div'); copy.append(element('h2', '', content.heading), element('p', '', content.body)); root.append(copy, element('a', 'button button-secondary', content.actionLabel)); return root; } }
+function element(tag,className,text,field){const node=document.createElement(tag);if(className)node.className=className;if(text)node.textContent=text;if(field)node.dataset.editField=field;return node}
+export const componentDefinitions=[
+  {type:'hero',name:'Hero',editableFields:[{path:'eyebrow',label:'Eyebrow'},{path:'heading',label:'Heading'},{path:'body',label:'Body',multiline:true},{path:'actionLabel',label:'Button label'}],render(content){const root=element('section','component hero');root.append(element('p','eyebrow',content.eyebrow,'eyebrow'),element('h1','',content.heading,'heading'),element('p','lede',content.body,'body'),element('a','button',content.actionLabel,'actionLabel'));return root}},
+  {type:'services',name:'Services',editableFields:[{path:'heading',label:'Heading'},{path:'items.0.title',label:'First service title'},{path:'items.0.body',label:'First service description',multiline:true}],render(content){const root=element('section','component services');root.append(element('p','eyebrow','What we do'),element('h2','',content.heading,'heading'));const grid=element('div','service-grid');content.items.forEach((item,index)=>{const card=element('article','service-card');card.append(element('h3','',item.title,`items.${index}.title`),element('p','',item.body,`items.${index}.body`));grid.append(card)});root.append(grid);return root}},
+  {type:'cta',name:'Call to action',editableFields:[{path:'heading',label:'Heading'},{path:'body',label:'Body',multiline:true},{path:'actionLabel',label:'Button label'}],render(content){const root=element('section','component cta');const copy=element('div');copy.append(element('h2','',content.heading,'heading'),element('p','',content.body,'body'));root.append(copy,element('a','button button-secondary',content.actionLabel,'actionLabel'));return root}}
 ];
