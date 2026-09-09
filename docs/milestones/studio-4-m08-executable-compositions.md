@@ -1,7 +1,7 @@
 ---
 milestone-id: studio-4-m08-executable-compositions
 mode: implementation
-status: active
+status: implemented
 baseline: 2785fb9607197dcd52851d698da867bbc2cc9742
 validation-level: functional
 affected-paths:
@@ -211,3 +211,9 @@ The frozen scope is declarative executable Library Compositions that expand once
 
 ## Builder Instruction
 Implement **Rally Site Studio 4.0 Milestone 08 — Executable Compositions** from this frozen contract in `jumpvin/Rally-Studio` on `master`. Make Certified Library compositions declaratively instantiate normal Component Instances through the existing Component Registry and Page state, integrate the insertion as one transaction with atomic Undo/Redo, preserve Milestones 01–07 architecture, validate every functional success criterion, and return the completed milestone to Architecture for `Review`.
+
+## Builder Implementation Result
+
+- Status: Implemented; pending Architecture review.
+- Functional validation: twenty-six automated composition/library/history/regression tests, JavaScript parsing, live HTTP startup/assets, Framework integrity, and v3 baseline preservation passed.
+- Release note: Added validated executable Composition recipes, two Certified seeds, registry/default resolution, safe content overrides, Add Composition from Library, atomic expansion at a requested index, and single-transaction Undo/Redo. See `docs/implementation/studio-4-m08.md`.
