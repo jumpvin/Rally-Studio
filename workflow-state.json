@@ -5,10 +5,10 @@
   "framework_identity": "0.3.13-dev.24.3",
   "release_target": "4.0.0",
   "current_milestone": "studio-4-m02-workspace-interaction-shell",
-  "current_status": "milestone-created",
+  "current_status": "active",
   "current_build": "3.0.0",
   "baseline": "cfa17990936622cece01f3bfac3e02d992f60e41",
-  "mode": "architecture",
+  "mode": "implementation",
   "validation_level": "functional",
   "affected_paths": [
     "studio4/**",
@@ -26,6 +26,6 @@
   "retained_evidence": [
     "docs/reviews/studio-4-m01-architecture-review.md"
   ],
-  "next_owner": "architecture",
-  "next_command": "Create Instructions"
+  "next_owner": "builder",
+  "next_command": "Implement Milestone"
 }
