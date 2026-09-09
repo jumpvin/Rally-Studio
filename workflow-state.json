@@ -4,27 +4,25 @@
   "authorized_branch": "master",
   "framework_identity": "0.3.13-dev.24.3",
   "release_target": "4.0.0",
-  "current_milestone": "studio-4-m13-review-sessions-approval-records",
-  "current_status": "approved",
+  "current_milestone": "studio-4-m14-conversation-task-handoff",
+  "current_status": "active",
   "current_build": "3.0.0",
-  "baseline": "6344e0c924fe026cbcbbbbf9471eb76c87f688c1",
-  "mode": "architecture",
+  "baseline": "c51acee67fbc76e0dbe68d47b867c8b9f8e74225",
+  "mode": "implementation",
   "validation_level": "functional",
   "affected_paths": [
     "studio4/**",
     "docs/implementation/**",
-    "docs/milestones/studio-4-m13-review-sessions-approval-records.md",
-    "docs/reviews/studio-4-m13-architecture-review.md",
+    "docs/milestones/studio-4-m14-conversation-task-handoff.md",
     "package.json"
   ],
   "affected_surfaces": [
-    "Review Session lifecycle",
-    "Website review checkpoints",
-    "Session-scoped conversations",
-    "Approval and sign-off records",
-    "Review summary and readiness UI"
+    "Review Conversation to Task conversion",
+    "Task lifecycle and status",
+    "Conversation/Review Session task references",
+    "Task list and navigation"
   ],
   "retained_evidence": [],
-  "next_owner": "architecture",
-  "next_command": "Create Milestone"
+  "next_owner": "Builder",
+  "next_command": "Implement Milestone"
 }
