@@ -1,7 +1,7 @@
 ---
 milestone-id: studio-4-m02-workspace-interaction-shell
-mode: architecture
-status: milestone-created
+mode: implementation
+status: active
 baseline: cfa17990936622cece01f3bfac3e02d992f60e41
 validation-level: functional
 affected-paths:
@@ -26,7 +26,7 @@ Website Workspace Interaction Shell
 
 ## Ownership
 - Architecture owner: Rally Site Studio Architecture Chat
-- Implementation owner after instructions: Rally Site Studio Build Chat
+- Implementation owner: Rally Site Studio Build Chat
 - Repository: `jumpvin/Rally-Studio`
 - Authorized branch: `master`
 - Release target: `4.0.0`
@@ -174,3 +174,6 @@ Architecture Review will prioritize state/interaction boundary correctness, work
 
 ## Architecture Freeze
 The frozen scope of Milestone 02 is the Website Workspace interaction shell: page-first Explorer, Component Instance selection, Context Panel, Edit/Preview modes, and safe structured-content editing. Later Stage 2 capabilities require separate Architecture authorization.
+
+## Builder Instruction
+Implement **Rally Site Studio 4.0 Milestone 02 — Website Workspace Interaction Shell** from this frozen contract in `jumpvin/Rally-Studio` on `master`. Implement only the authorized interaction shell and validate every functional success criterion. Preserve the Milestone 01 architecture and Studio v3 reference material. Do not implement later Stage 2 or roadmap capabilities. Return the completed milestone to Architecture for `Review`.
