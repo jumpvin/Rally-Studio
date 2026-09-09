@@ -1,7 +1,7 @@
 ---
 milestone-id: studio-4-m17-discovery-questionnaire-foundation
 mode: implementation
-status: active
+status: implemented
 baseline: 2d9975e15dcf110ee489ed22bfd269b8b7cdc834
 validation-level: functional
 affected-paths:
@@ -281,3 +281,11 @@ The frozen scope is structured Website Discovery questionnaire definitions/respo
 
 ## Builder Instruction
 Implement **Rally Site Studio 4.0 Milestone 17 — Discovery Questionnaire Foundation** from this frozen contract in `jumpvin/Rally-Studio` on `master`. Introduce Discovery as a semantic domain separate from Website Review, add one concise versioned Website Discovery questionnaire with structured sections/questions/responses and derived progress, provide a compact Website-supporting Discovery surface, expose deterministic normalized recommendation inputs without making recommendations or mutating the Website, preserve Milestones 01–16 and all state-separation boundaries, validate every functional success criterion, and return the completed milestone to Architecture for `Review`.
+
+## Implementation Evidence
+
+- Separate versioned Discovery domain with five sections, eleven questions, and all five required answer types.
+- Stable normalized responses with actor and creation/update metadata.
+- Derived per-section and overall required progress plus compact sectioned UI.
+- Deterministic semantic recommendation-input export with no recommendation or Website mutation.
+- 72 passing functional tests plus live browser verification of drawer and section navigation.
