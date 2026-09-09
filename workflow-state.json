@@ -4,26 +4,25 @@
   "authorized_branch": "master",
   "framework_identity": "0.3.13-dev.24.3",
   "release_target": "4.0.0",
-  "current_milestone": "studio-4-m04-component-variants",
-  "current_status": "approved",
+  "current_milestone": "studio-4-m05-responsive-preview-overrides",
+  "current_status": "active",
   "current_build": "3.0.0",
-  "baseline": "0f1c2cf17089548543f65adcabf8fdb0109a92c0",
-  "mode": "architecture",
+  "baseline": "fc7fcd7c03b190928a078edf42b0c48f6c3b62c1",
+  "mode": "implementation",
   "validation_level": "functional",
   "affected_paths": [
     "studio4/**",
     "docs/implementation/**",
-    "docs/milestones/studio-4-m04-component-variants.md",
-    "docs/reviews/studio-4-m04-architecture-review.md",
+    "docs/milestones/studio-4-m05-responsive-preview-overrides.md",
     "package.json"
   ],
   "affected_surfaces": [
-    "Component Definition variant contract",
-    "Component Instance variant state",
-    "Context Panel variant controls",
-    "Live variant switching with content preservation"
+    "Responsive preview modes",
+    "Component responsive behavior",
+    "Constrained instance-level responsive overrides",
+    "Context Panel responsive controls"
   ],
   "retained_evidence": [],
-  "next_owner": "architecture",
-  "next_command": "Create Milestone"
+  "next_owner": "builder",
+  "next_command": "Implement Milestone"
 }
