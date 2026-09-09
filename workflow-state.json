@@ -5,8 +5,8 @@
   "framework_identity": "0.3.13-dev.24.3",
   "release_target": "4.0.0",
   "current_milestone": null,
-  "current_status": null,
+  "current_status": "architecture-roadmap-approved",
   "current_build": "3.0.0",
   "next_owner": "architecture",
-  "next_command": "Continue Discovery"
+  "next_command": "Create Instructions"
 }
