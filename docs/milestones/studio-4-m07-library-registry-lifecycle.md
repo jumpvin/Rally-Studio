@@ -1,7 +1,7 @@
 ---
 milestone-id: studio-4-m07-library-registry-lifecycle
 mode: implementation
-status: active
+status: implemented
 baseline: 14284f1ac986687a32a1558fff2957ed56a2e5aa
 validation-level: functional
 affected-paths:
@@ -198,3 +198,9 @@ The frozen scope is a typed, browsable Library catalog and lifecycle model plus 
 
 ## Builder Instruction
 Implement **Rally Site Studio 4.0 Milestone 07 — Library Registry & Object Lifecycle** from this frozen contract in `jumpvin/Rally-Studio` on `master`. Introduce the typed Library catalog/lifecycle boundary, adapt existing component definitions into Certified Library items without duplicating runtime logic, add the compact internal Library browser, preserve Milestones 01–06 architecture and history behavior, validate every functional success criterion, and return the completed milestone to Architecture for `Review`.
+
+## Builder Implementation Result
+
+- Status: Implemented; pending Architecture review.
+- Functional validation: twenty-two automated Library/registry/history/regression tests, JavaScript parsing, live HTTP startup/assets, Framework integrity, and v3 baseline preservation passed.
+- Release note: Added the typed Library catalog, five object types, five lifecycle states, Certified-default visibility rules, nine representative seeds, safe Component Definition references, and a browse-only Edit-mode Library drawer. See `docs/implementation/studio-4-m07.md`.

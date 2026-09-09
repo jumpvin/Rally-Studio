@@ -5,10 +5,10 @@
   "framework_identity": "0.3.13-dev.24.3",
   "release_target": "4.0.0",
   "current_milestone": "studio-4-m07-library-registry-lifecycle",
-  "current_status": "active",
+  "current_status": "implemented",
   "current_build": "3.0.0",
   "baseline": "14284f1ac986687a32a1558fff2957ed56a2e5aa",
-  "mode": "implementation",
+  "mode": "review",
   "validation_level": "functional",
   "affected_paths": [
     "studio4/**",
@@ -23,6 +23,6 @@
     "Component-definition/library integration seam"
   ],
   "retained_evidence": [],
-  "next_owner": "builder",
-  "next_command": "Implement Milestone"
+  "next_owner": "Architecture",
+  "next_command": "Review"
 }
