@@ -1,7 +1,7 @@
 ---
 milestone-id: studio-4-m16-review-version-history
 mode: implementation
-status: active
+status: implemented
 baseline: f111855995799df5779b58e0e63d0e28885d9b51
 validation-level: functional
 affected-paths:
@@ -248,3 +248,11 @@ The frozen scope is immutable in-session Review Version history tied to Website 
 
 ## Builder Instruction
 Implement **Rally Site Studio 4.0 Milestone 16 — Review / Version History** from this frozen contract in `jumpvin/Rally-Studio` on `master`. Introduce immutable Website-level Review Versions separate from normal Workspace edit history, integrate Review Session checkpoints and Approval evidence with stable Review Version identity, add a compact Version History surface with read-only inspection and protected restore, preserve all collaboration/workflow records across restore, preserve Milestones 01–15, validate every functional success criterion, and return the completed milestone to Architecture for `Review`.
+
+## Implementation Evidence
+
+- Immutable, fully restorable Review Version records with stable metadata and fingerprints.
+- Review Session checkpoints and append-only approvals linked to exact Review Version identity.
+- Compact timeline with relabel, current-state indication, read-only inspection, and protected restore.
+- Restore is one Workspace transaction with exact-identity Undo/Redo and collaboration retention.
+- 67 passing functional tests and live browser verification of capture, metadata, and inspection.
