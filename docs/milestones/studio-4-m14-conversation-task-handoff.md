@@ -1,7 +1,7 @@
 ---
 milestone-id: studio-4-m14-conversation-task-handoff
 mode: implementation
-status: active
+status: implemented
 baseline: c51acee67fbc76e0dbe68d47b867c8b9f8e74225
 validation-level: functional
 affected-paths:
@@ -233,3 +233,11 @@ The frozen scope is explicit Conversation → Task conversion, a small independe
 
 ## Builder Instruction
 Implement **Rally Site Studio 4.0 Milestone 14 — Conversation → Task Handoff** from this frozen contract in `jumpvin/Rally-Studio` on `master`. Add a separate Task workflow store/model, explicit Task creation from existing Conversations, stable source references to Website/Page/Component/Review Session, a compact Tasks surface and source navigation, preserve strict independence between Task status, Conversation resolution, Review Session readiness, approval records and Website Undo/Redo, preserve Milestones 01–13, validate every functional success criterion, and return the completed milestone to Architecture for `Review`.
+
+## Implementation Evidence
+
+- Separate Task store with stable source references and four-state lifecycle.
+- Explicit Conversation handoff, linked-Task display, compact filtered Tasks drawer, editing, and source navigation.
+- Unavailable Page/Component/Website context retained and restored by stable identity.
+- Task, Conversation, Review Session, Approval, and Website history independence covered by 57 passing functional tests.
+- Live browser validation completed for Conversation creation, Task handoff, linked display, Tasks surface, and editable Task detail.
