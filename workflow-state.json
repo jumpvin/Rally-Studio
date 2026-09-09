@@ -5,15 +5,16 @@
   "framework_identity": "0.3.13-dev.24.3",
   "release_target": "4.0.0",
   "current_milestone": "studio-4-m02-workspace-interaction-shell",
-  "current_status": "implemented",
+  "current_status": "approved",
   "current_build": "3.0.0",
-  "baseline": "cfa17990936622cece01f3bfac3e02d992f60e41",
-  "mode": "review",
+  "baseline": "67b4f84c977a6dc84d3942e77eeffdc6b8ca4302",
+  "mode": "architecture",
   "validation_level": "functional",
   "affected_paths": [
     "studio4/**",
     "docs/implementation/**",
     "docs/milestones/studio-4-m02-workspace-interaction-shell.md",
+    "docs/reviews/studio-4-m02-architecture-review.md",
     "package.json"
   ],
   "affected_surfaces": [
@@ -24,6 +25,6 @@
     "Safe inline structured-content editing"
   ],
   "retained_evidence": [],
-  "next_owner": "Architecture",
-  "next_command": "Review"
+  "next_owner": "architecture",
+  "next_command": "Create Milestone"
 }
