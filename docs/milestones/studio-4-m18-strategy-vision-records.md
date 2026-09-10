@@ -1,7 +1,7 @@
 ---
 milestone-id: studio-4-m18-strategy-vision-records
 mode: implementation
-status: active
+status: implemented
 baseline: 8bb98c963c02e31f6335b6330fb78e96e804291c
 validation-level: functional
 affected-paths:
@@ -302,3 +302,10 @@ The frozen scope is an editable, human-owned Strategy/Vision record synthesized 
 
 ## Builder Instruction
 Implement **Rally Site Studio 4.0 Milestone 18 — Strategy / Vision Records** from this frozen contract in `jumpvin/Rally-Studio` on `master`. Add a structured Strategy domain separate from Discovery and Website state, implement deterministic Draft/Refresh from normalized Discovery inputs with field provenance and protection of human edits, provide a compact Strategy editing/readiness surface and normalized Strategy output seam, preserve Milestones 01–17 and all state-separation boundaries, validate every functional success criterion, and return the completed milestone to Architecture for `Review`.
+
+## Implementation Evidence
+
+- Structured Strategy record with eight sections, provenance, timestamps, and derived lifecycle.
+- Deterministic Discovery drafting, stale detection, and protected human edits.
+- Compact editing/readiness surface and semantic output without Website mutation.
+- 77 passing functional tests covering Strategy and Milestones 01–17 regression.
