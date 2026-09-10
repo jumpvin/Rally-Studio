@@ -1,7 +1,7 @@
 ---
 milestone-id: studio-4-m20-strategy-recommendations
 mode: implementation
-status: active
+status: implemented
 baseline: 03b026bdfa8a5619c9822c0324c5f29fdcea2fa2
 validation-level: functional
 affected-paths:
@@ -218,3 +218,10 @@ The frozen scope is deterministic, explainable Strategy Recommendations against 
 
 ## Builder Instruction
 Implement **Rally Site Studio 4.0 Milestone 20 — Strategy Recommendations** from this frozen contract in `jumpvin/Rally-Studio` on `master`. Add a separate explainable Recommendation domain that deterministically consumes Discovery + Strategy outputs, proposes existing Certified Library/design targets, supports inspect/dismiss/stale/apply behavior, routes all applied Website changes through existing canonical transaction boundaries, integrates Recommendations into the Strategy Packet, preserves Milestones 01–19 and all state-separation boundaries, validates every functional success criterion, and returns the completed milestone to Architecture for `Review`.
+
+## Implementation Evidence
+
+- Separate stable Recommendation store and deterministic five-category rule set: `studio4/recommendation-store.js`.
+- Compact Recommendations drawer and shared Strategy Packet Recommendations step: `studio4/app.js`, `studio4/recommendations.css`, and `studio4/strategy-packet-store.js`.
+- Functional coverage for generation, provenance, certified targets, lifecycle, staleness, safe application, Undo/Redo, packet behavior, and workflow separation: `studio4/tests/foundation.test.mjs`.
+- Detailed record, rule, apply, regeneration, and limitation documentation: `docs/implementation/studio-4-m20.md`.
