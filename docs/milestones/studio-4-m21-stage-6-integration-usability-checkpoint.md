@@ -1,7 +1,7 @@
 ---
 milestone-id: studio-4-m21-stage-6-integration-usability-checkpoint
 mode: implementation
-status: active
+status: implemented
 baseline: 4039cd6e6c16b4ce0a49535867a575a99f307495
 validation-level: functional
 affected-paths:
@@ -231,3 +231,11 @@ The frozen scope is integration and usability hardening of the already-built Sta
 
 ## Builder Instruction
 Implement **Rally Site Studio 4.0 Milestone 21 — Stage 6 Integration & Usability Checkpoint** from this frozen contract in `jumpvin/Rally-Studio` on `master`. Exercise the complete Discovery → Strategy → Recommendations → Strategy Packet → canonical Website workflow, repair confusing or broken handoffs, keep all visible state derived and synchronized, reconcile navigation safely across recommendation-driven site/page changes and Undo/Redo, improve obvious interaction/empty/error states without redesigning the product or collapsing domain boundaries, add end-to-end integration coverage, preserve Milestones 01–20 and Studio v3, and return the completed milestone to Architecture for `Review`.
+
+## Implementation Evidence
+
+- Derived workflow readiness and next-action contract: `studio4/stage6-workflow.js`.
+- Integrated navigation, reversible Packet handoffs, focus behavior, live feedback, and repaired browser Packet rendering: `studio4/app.js` and `studio4/stage6.css`.
+- Deterministic Packet Page reconciliation across Website replacement and history traversal: `studio4/strategy-packet-store.js`.
+- End-to-end happy, stale/regeneration, replacement/Undo/Redo, and domain-separation coverage: `studio4/tests/foundation.test.mjs`.
+- Workflow, feedback, browser validation, and known-limit documentation: `docs/implementation/studio-4-m21.md`.
