@@ -1,7 +1,7 @@
 ---
 milestone-id: studio-4-m22-testing-usability-stabilization
 mode: implementation
-status: active
+status: implemented
 baseline: 555523efb4c03eecc46770bfbcaec2b0e9de522d
 validation-level: functional
 affected-paths:
@@ -226,3 +226,10 @@ The frozen scope is the first user-testing stabilization pass: repair Discovery 
 
 ## Builder Instruction
 Implement **Rally Site Studio 4.0 Milestone 22 — Testing Usability Stabilization** from this frozen contract in `jumpvin/Rally-Studio` on `master`. Fix the Discovery input focus/caret blocker at its rendering/state-update cause, establish a coherent baseline style and spacing system for existing Studio controls/chrome/Explorer/drawers, remove overlap and browser-default-control interference at the primary testing viewport, preserve Website-first priority and all Milestones 01–21 domain/history semantics, validate continuous Discovery typing and the major current surfaces in a live browser plus the cumulative automated suite, and return the completed milestone to Architecture for `Review`.
+
+## Implementation Evidence
+
+- Incremental Discovery rendering and immediate text persistence: `studio4/app.js`.
+- Shared Studio controls, chrome, Explorer, drawer, focus, disabled, and responsive baseline: `studio4/ui-baseline.css` and `studio4/stage6.css`.
+- Incremental text persistence regression coverage: `studio4/tests/foundation.test.mjs`.
+- Root-cause, layout, browser validation, and limitation notes: `docs/implementation/studio-4-m22.md`.

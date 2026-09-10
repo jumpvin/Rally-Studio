@@ -5,10 +5,10 @@
   "framework_identity": "0.3.13-dev.24.3",
   "release_target": "4.0.0",
   "current_milestone": "studio-4-m22-testing-usability-stabilization",
-  "current_status": "active",
+  "current_status": "implemented",
   "current_build": "3.0.0",
   "baseline": "555523efb4c03eecc46770bfbcaec2b0e9de522d",
-  "mode": "implementation",
+  "mode": "review",
   "validation_level": "functional",
   "affected_paths": [
     "studio4/**",
@@ -24,6 +24,6 @@
     "Testing usability regression"
   ],
   "retained_evidence": [],
-  "next_owner": "builder",
-  "next_command": "Implement Milestone"
+  "next_owner": "Architecture",
+  "next_command": "Review"
 }
