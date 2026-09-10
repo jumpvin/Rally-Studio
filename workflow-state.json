@@ -4,26 +4,25 @@
   "authorized_branch": "master",
   "framework_identity": "0.3.13-dev.24.3",
   "release_target": "4.0.0",
-  "current_milestone": "studio-4-m19-interactive-strategy-packet-shell",
-  "current_status": "approved",
+  "current_milestone": "studio-4-m20-strategy-recommendations",
+  "current_status": "active",
   "current_build": "3.0.0",
-  "baseline": "30a57a37939a23d9194be78fedabf27fa0c3c745",
-  "mode": "architecture",
+  "baseline": "03b026bdfa8a5619c9822c0324c5f29fdcea2fa2",
+  "mode": "implementation",
   "validation_level": "functional",
   "affected_paths": [
     "studio4/**",
     "docs/implementation/**",
-    "docs/milestones/studio-4-m19-interactive-strategy-packet-shell.md",
-    "docs/reviews/studio-4-m19-architecture-review.md",
+    "docs/milestones/studio-4-m20-strategy-recommendations.md",
     "package.json"
   ],
   "affected_surfaces": [
-    "Interactive Strategy Packet shell",
-    "Discovery and Strategy presentation",
-    "Canonical Design Settings controls",
-    "Live Website-in-packet preview"
+    "Strategy recommendation records",
+    "Recommendation evidence and rationale",
+    "Recommendation inspection and apply flow",
+    "Strategy Packet recommendation step"
   ],
   "retained_evidence": [],
-  "next_owner": "architecture",
-  "next_command": "Create Milestone"
+  "next_owner": "builder",
+  "next_command": "Implement Milestone"
 }
