@@ -4,26 +4,26 @@
   "authorized_branch": "master",
   "framework_identity": "0.3.13-dev.24.3",
   "release_target": "4.0.0",
-  "current_milestone": "studio-4-m20-strategy-recommendations",
-  "current_status": "approved",
+  "current_milestone": "studio-4-m21-stage-6-integration-usability-checkpoint",
+  "current_status": "active",
   "current_build": "3.0.0",
-  "baseline": "a7be7c896511a149ecd9a5b850a30ee68606b348",
-  "mode": "architecture",
+  "baseline": "4039cd6e6c16b4ce0a49535867a575a99f307495",
+  "mode": "implementation",
   "validation_level": "functional",
   "affected_paths": [
     "studio4/**",
     "docs/implementation/**",
-    "docs/milestones/studio-4-m20-strategy-recommendations.md",
-    "docs/reviews/studio-4-m20-architecture-review.md",
+    "docs/milestones/studio-4-m21-stage-6-integration-usability-checkpoint.md",
     "package.json"
   ],
   "affected_surfaces": [
-    "Strategy recommendation records",
-    "Recommendation evidence and rationale",
-    "Recommendation inspection and apply flow",
-    "Strategy Packet recommendation step"
+    "End-to-end Stage 6 workflow",
+    "Studio navigation and workflow handoffs",
+    "Strategy Packet coherence",
+    "Recommendation apply feedback",
+    "UX integration regression"
   ],
   "retained_evidence": [],
-  "next_owner": "architecture",
-  "next_command": "Create Milestone"
+  "next_owner": "builder",
+  "next_command": "Implement Milestone"
 }
