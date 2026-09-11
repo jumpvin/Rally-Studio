@@ -74,7 +74,7 @@ export function createStudioStore(initial) {
     restoreDocument(snapshot, label = 'Restore review version') { const document = typeof snapshot === 'string' ? JSON.parse(snapshot) : clone(snapshot); transact(label, document.website.id, next => { next.website = clone(document.website); next.pages = clone(document.pages); next.designSettings = clone(document.designSettings); next.componentInstances = clone(document.componentInstances); }); },
     selectPage(pageId) { if (!state.pages[pageId]) throw new Error(`Unknown page: ${pageId}`); publish({ ...state, workspace: { ...state.workspace, activePageId: pageId, selectedComponentId: null } }); },
     selectComponent(id) { if (id && !page().componentInstanceIds.includes(id)) throw new Error(`Component is not on active page: ${id}`); publish({ ...state, workspace: { ...state.workspace, selectedComponentId: id } }); },
-    setMode(mode) { publish({ ...state, workspace: { ...state.workspace, mode, selectedComponentId: mode === 'preview' ? null : state.workspace.selectedComponentId } }); },
+    setMode(mode) { if (!['edit','preview'].includes(mode)) throw new Error(`Invalid mode: ${mode}`); publish({ ...state, workspace: { ...state.workspace, mode } }); },
     setPreviewDevice(device) { if (!['desktop', 'tablet', 'mobile'].includes(device)) throw new Error(`Invalid preview device: ${device}`); publish({ ...state, workspace: { ...state.workspace, previewDevice: device } }); },
     createPage(name = 'Untitled Page') {
       const finalName = uniqueName(String(name).trim() || 'Untitled Page');
