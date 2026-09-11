@@ -4,27 +4,27 @@
   "authorized_branch": "master",
   "framework_identity": "0.3.13-dev.24.3",
   "release_target": "4.0.0",
-  "current_milestone": "studio-4-m23-guided-workflow-form-editor-stabilization",
-  "current_status": "acceptance-testing",
+  "current_milestone": "studio-4-m24-testing-ux-consolidation",
+  "current_status": "active",
   "current_build": "3.0.0",
-  "baseline": "6b47bf45f3ad3c1d23a574a0a022f5591ed49d2e",
-  "mode": "review",
+  "baseline": "f253fa0e22d984df7020460fc351e8db4976b8c9",
+  "mode": "implementation",
   "validation_level": "functional",
   "affected_paths": [
     "studio4/**",
     "docs/implementation/**",
-    "docs/milestones/studio-4-m23-guided-workflow-form-editor-stabilization.md",
-    "docs/reviews/studio-4-m23-architecture-review.md",
+    "docs/milestones/studio-4-m24-testing-ux-consolidation.md",
     "package.json"
   ],
   "affected_surfaces": [
-    "Discovery select and guided completion flow",
-    "Strategy input stability and completion guidance",
-    "Add Section insertion workflow",
-    "Explorer layout and component/library clarity",
-    "User-testing regression"
+    "Immersive Preview mode",
+    "Strategy Packet Website preview parity",
+    "Add Section chooser placement",
+    "Explorer and component inspector usability",
+    "Component rendering cleanup",
+    "Project-style Studio accents"
   ],
   "retained_evidence": [],
-  "next_owner": "user-testing",
-  "next_command": "Acceptance Test"
+  "next_owner": "builder",
+  "next_command": "Implement Milestone"
 }
