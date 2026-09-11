@@ -5,15 +5,16 @@
   "framework_identity": "0.3.13-dev.24.3",
   "release_target": "4.0.0",
   "current_milestone": "studio-4-m24-testing-ux-consolidation",
-  "current_status": "implemented",
+  "current_status": "approved",
   "current_build": "3.0.0",
-  "baseline": "f253fa0e22d984df7020460fc351e8db4976b8c9",
-  "mode": "implementation",
+  "baseline": "b00b1eef2bb8eceb75cc162b623c7411c974d140",
+  "mode": "architecture",
   "validation_level": "functional",
   "affected_paths": [
     "studio4/**",
     "docs/implementation/**",
     "docs/milestones/studio-4-m24-testing-ux-consolidation.md",
+    "docs/reviews/studio-4-m24-architecture-review.md",
     "package.json"
   ],
   "affected_surfaces": [
@@ -26,5 +27,5 @@
   ],
   "retained_evidence": [],
   "next_owner": "architecture",
-  "next_command": "Review"
+  "next_command": "User Test / Create Milestone"
 }
