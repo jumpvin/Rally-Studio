@@ -4,27 +4,26 @@
   "authorized_branch": "master",
   "framework_identity": "0.3.13-dev.24.3",
   "release_target": "4.0.0",
-  "current_milestone": "studio-4-m22-testing-usability-stabilization",
-  "current_status": "approved",
+  "current_milestone": "studio-4-m23-guided-workflow-form-editor-stabilization",
+  "current_status": "active",
   "current_build": "3.0.0",
-  "baseline": "b7d11b8ace6533edd9db99a2ac64a8bbaccef5f0",
-  "mode": "architecture",
+  "baseline": "eac49b971ab0f52e2dde94241e812ef1c9adeeab",
+  "mode": "implementation",
   "validation_level": "functional",
   "affected_paths": [
     "studio4/**",
     "docs/implementation/**",
-    "docs/milestones/studio-4-m22-testing-usability-stabilization.md",
-    "docs/reviews/studio-4-m22-architecture-review.md",
+    "docs/milestones/studio-4-m23-guided-workflow-form-editor-stabilization.md",
     "package.json"
   ],
   "affected_surfaces": [
-    "Discovery form input stability",
-    "Studio top-level chrome and workflow layout",
-    "Common button/control styling",
-    "Explorer and drawer baseline usability",
-    "Testing usability regression"
+    "Discovery select and guided completion flow",
+    "Strategy input stability and completion guidance",
+    "Add Section insertion workflow",
+    "Explorer layout and component/library clarity",
+    "User-testing regression"
   ],
   "retained_evidence": [],
-  "next_owner": "architecture",
-  "next_command": "User Test / Create Milestone"
+  "next_owner": "builder",
+  "next_command": "Implement Milestone"
 }
