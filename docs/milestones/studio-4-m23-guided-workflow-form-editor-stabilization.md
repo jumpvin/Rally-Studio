@@ -1,7 +1,7 @@
 ---
 milestone-id: studio-4-m23-guided-workflow-form-editor-stabilization
 mode: implementation
-status: active
+status: implemented
 baseline: eac49b971ab0f52e2dde94241e812ef1c9adeeab
 validation-level: functional
 affected-paths:

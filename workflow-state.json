@@ -5,7 +5,7 @@
   "framework_identity": "0.3.13-dev.24.3",
   "release_target": "4.0.0",
   "current_milestone": "studio-4-m23-guided-workflow-form-editor-stabilization",
-  "current_status": "active",
+  "current_status": "implemented",
   "current_build": "3.0.0",
   "baseline": "eac49b971ab0f52e2dde94241e812ef1c9adeeab",
   "mode": "implementation",
@@ -24,6 +24,6 @@
     "User-testing regression"
   ],
   "retained_evidence": [],
-  "next_owner": "builder",
-  "next_command": "Implement Milestone"
+  "next_owner": "architecture",
+  "next_command": "Review"
 }

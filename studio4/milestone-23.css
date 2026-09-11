@@ -1,0 +1,27 @@
+.explorer header span,
+.branch > small,
+.explorer-empty { color: var(--ui-muted); font-size: 11px; line-height: 1.4; }
+.branch > strong { display: block; margin-bottom: 2px; font-size: 12px; }
+.branch > small { display: block; margin-bottom: 8px; }
+.page-row,
+.explorer-row { grid-template-columns: minmax(0, 1fr) auto; align-items: start; }
+.page-select,
+.component-item { min-width: 0; }
+.page-actions { grid-column: 1 / -1; }
+.move-controls,
+.page-actions { flex-wrap: wrap; }
+.chooser > div { width: min(540px, calc(100vw - 32px)); }
+.chooser header { display: flex; align-items: center; justify-content: space-between; }
+.chooser header > div { display: grid; gap: 3px; }
+.chooser header small,
+#definition-list button span,
+#definition-list button small,
+.chooser-empty { color: var(--ui-muted); font-weight: 400; }
+#definition-list { display: grid; gap: 8px; }
+#definition-list button { display: grid; gap: 4px; text-align: left; }
+.discovery-dock [data-discovery-guidance],
+.strategy-dock [data-strategy-guidance] { position: sticky; bottom: -22px; display: flex; gap: 8px; margin: 18px -22px -22px; padding: 14px 22px; background: #fff; border-top: 1px solid var(--ui-line); }
+.discovery-dock [data-discovery-guidance] button:last-child { margin-left: auto; }
+.discovery-dock [data-discovery-guidance] button:last-child,
+.strategy-dock [data-strategy-guidance] button { background: #172554; color: #fff; }
+.strategy-dock [data-strategy-guidance] button { width: 100%; }
