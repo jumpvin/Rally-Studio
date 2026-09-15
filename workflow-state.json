@@ -4,27 +4,26 @@
   "authorized_branch": "master",
   "framework_identity": "0.3.13-dev.24.3",
   "release_target": "4.0.0",
-  "current_milestone": "studio-4-m26-organizations-contacts-multiple-projects",
-  "current_status": "approved",
+  "current_milestone": "studio-4-m27-project-playbooks-roadmaps",
+  "current_status": "active",
   "current_build": "3.0.0",
-  "baseline": "f1e90c725fb22f6e1c8b22e8ec7a4956adf1fba9",
-  "mode": "architecture",
+  "baseline": "e6c5840fdb8d77cefb4b5480ecc2f1745c1b76dd",
+  "mode": "implementation",
   "validation_level": "functional",
   "affected_paths": [
     "studio4/**",
     "docs/implementation/**",
-    "docs/milestones/studio-4-m26-organizations-contacts-multiple-projects.md",
-    "docs/reviews/studio-4-m26-architecture-review.md",
+    "docs/milestones/studio-4-m27-project-playbooks-roadmaps.md",
     "package.json"
   ],
   "affected_surfaces": [
-    "Organization records",
-    "Contact records and organization relationships",
-    "Multiple Project records and organization ownership",
-    "Client/project workspace navigation",
-    "Multi-project operational summary"
+    "Project Playbook definitions",
+    "Project Roadmap/checkpoint records",
+    "Playbook-to-Project application",
+    "Roadmap progress and next checkpoint",
+    "Project Workspace roadmap integration"
   ],
   "retained_evidence": [],
-  "next_owner": "architecture",
-  "next_command": "Create Milestone"
+  "next_owner": "builder",
+  "next_command": "Implement Milestone"
 }
