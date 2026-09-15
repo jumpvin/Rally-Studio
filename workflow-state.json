@@ -4,27 +4,26 @@
   "authorized_branch": "master",
   "framework_identity": "0.3.13-dev.24.3",
   "release_target": "4.0.0",
-  "current_milestone": "studio-4-m25-project-workspace-foundation",
-  "current_status": "approved",
+  "current_milestone": "studio-4-m26-organizations-contacts-multiple-projects",
+  "current_status": "active",
   "current_build": "3.0.0",
-  "baseline": "8f5f5971f5b561787f15d365c8c5b97932227943",
-  "mode": "architecture",
+  "baseline": "49f136a1454decc22b9ccd29504d0872a8931164",
+  "mode": "implementation",
   "validation_level": "functional",
   "affected_paths": [
     "studio4/**",
     "docs/implementation/**",
-    "docs/milestones/studio-4-m25-project-workspace-foundation.md",
-    "docs/reviews/studio-4-m25-architecture-review.md",
+    "docs/milestones/studio-4-m26-organizations-contacts-multiple-projects.md",
     "package.json"
   ],
   "affected_surfaces": [
-    "Project records and lifecycle",
-    "Project-to-Website/domain references",
-    "Project workspace overview",
-    "Project next-action derivation",
-    "Stage 7 navigation foundation"
+    "Organization records",
+    "Contact records and organization relationships",
+    "Multiple Project records and organization ownership",
+    "Client/project workspace navigation",
+    "Multi-project operational summary"
   ],
   "retained_evidence": [],
-  "next_owner": "architecture",
-  "next_command": "Create Milestone"
+  "next_owner": "builder",
+  "next_command": "Implement Milestone"
 }
