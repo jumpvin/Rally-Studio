@@ -5,15 +5,16 @@
   "framework_identity": "0.3.13-dev.24.3",
   "release_target": "4.0.0",
   "current_milestone": "studio-4-m28-rally-work-queue",
-  "current_status": "implemented",
+  "current_status": "approved",
   "current_build": "3.0.0",
-  "baseline": "843b928a1c249b3a1bc1fede5610ac1e8540a28b",
-  "mode": "implementation",
+  "baseline": "1d155c432ae1dc7756e95c57337155cfddb88a1f",
+  "mode": "architecture",
   "validation_level": "functional",
   "affected_paths": [
     "studio4/**",
     "docs/implementation/**",
     "docs/milestones/studio-4-m28-rally-work-queue.md",
+    "docs/reviews/studio-4-m28-architecture-review.md",
     "package.json"
   ],
   "affected_surfaces": [
@@ -25,5 +26,5 @@
   ],
   "retained_evidence": [],
   "next_owner": "architecture",
-  "next_command": "Review"
+  "next_command": "Create Milestone"
 }
