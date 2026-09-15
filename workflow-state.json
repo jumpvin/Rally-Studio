@@ -5,15 +5,16 @@
   "framework_identity": "0.3.13-dev.24.3",
   "release_target": "4.0.0",
   "current_milestone": "studio-4-m27-project-playbooks-roadmaps",
-  "current_status": "implemented",
+  "current_status": "approved",
   "current_build": "3.0.0",
-  "baseline": "e6c5840fdb8d77cefb4b5480ecc2f1745c1b76dd",
-  "mode": "implementation",
+  "baseline": "6bf9555fc8f02237f2c6a823d47c6d9fcf932d7a",
+  "mode": "architecture",
   "validation_level": "functional",
   "affected_paths": [
     "studio4/**",
     "docs/implementation/**",
     "docs/milestones/studio-4-m27-project-playbooks-roadmaps.md",
+    "docs/reviews/studio-4-m27-architecture-review.md",
     "package.json"
   ],
   "affected_surfaces": [
@@ -25,5 +26,5 @@
   ],
   "retained_evidence": [],
   "next_owner": "architecture",
-  "next_command": "Review"
+  "next_command": "Create Milestone"
 }
