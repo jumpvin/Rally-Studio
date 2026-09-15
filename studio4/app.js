@@ -19,6 +19,8 @@ import { deriveStage6Summary } from './stage6-workflow.js';
 import { createProjectStore } from './project-store.js';
 import { createOrganizationStore } from './organization-store.js';
 import { createRoadmapStore } from './roadmap-store.js';
+import { createWorkQueue } from './work-queue.js';
+import { initWorkQueueUI } from './work-queue-ui.js';
 
 for (const href of ['/studio4/responsive.css','/studio4/history.css','/studio4/library.css','/studio4/comments.css','/studio4/review-sessions.css','/studio4/tasks.css','/studio4/review-versions.css','/studio4/discovery.css','/studio4/strategy.css','/studio4/strategy-packet.css','/studio4/recommendations.css','/studio4/stage6.css','/studio4/ui-baseline.css','/studio4/milestone-23.css','/studio4/milestone-24.css','/studio4/project-workspace.css','/studio4/organizations.css','/studio4/roadmaps.css']) document.head.append(Object.assign(window.document.createElement('link'), { rel: 'stylesheet', href }));
 const store = createStudioStore(seedState), registry = createComponentRegistry(), $ = selector => document.querySelector(selector), canvas = $('#page-canvas');
@@ -35,6 +37,8 @@ const recommendationStore=createRecommendationStore({documentStore:store,discove
 const organizationStore=createOrganizationStore();
 const projectStore=createProjectStore({documentStore:store,discoveryStore,strategyStore,recommendationStore,reviewSessionStore,conversationStore,taskStore,organizationStore});
 const roadmapStore=createRoadmapStore({projectStore});
+const workQueue=createWorkQueue({projectStore,roadmapStore,taskStore,conversationStore});
+document.head.append(Object.assign(document.createElement('link'),{rel:'stylesheet',href:'/studio4/work-queue.css'}));
 let insertionIndex = 0;
 const read = (object, path) => path.split('.').reduce((value, key) => value?.[key], object);
 
@@ -165,6 +169,8 @@ function promptFields(title,fields,save){const overlay=window.document.createEle
 function newProject(organizationId){promptFields('New Project',[{label:'Name',name:'name',required:true}],values=>{projectStore.create({organizationId:organizationId||organizationStore.getState().selectedId,name:values.name});renderRally();renderOrganization();});}
 rallyWorkspace.querySelector('[data-project-filter]').onchange=renderRally;rallyWorkspace.querySelector('[data-new-project]').onclick=()=>{const first=organizationStore.listOrganizations({includeArchived:false})[0];newProject(first.id);};rallyWorkspace.querySelector('[data-new-organization]').onclick=()=>promptFields('New Organization',[{label:'Name',name:'name',required:true},{label:'Description',name:'description'}],values=>{const id=organizationStore.createOrganization(values);openOrganization(id);});organizationWorkspace.querySelector('[data-edit-organization]').onclick=()=>{const item=organizationStore.getOrganization(organizationStore.getState().selectedId);promptFields('Edit Organization',[{label:'Name',name:'name',value:item.name,required:true},{label:'Description',name:'description',value:item.description},{label:'Status',name:'status',value:item.status,options:organizationStore.organizationStatuses}],values=>organizationStore.updateOrganization(item.id,values));};organizationWorkspace.querySelector('[data-new-contact]').onclick=()=>{const id=organizationStore.getState().selectedId;promptFields('New Contact',[{label:'Name',name:'name',required:true},{label:'Email',name:'email'},{label:'Phone',name:'phone'},{label:'Role / title',name:'role'}],values=>organizationStore.createContact(id,values));};organizationWorkspace.querySelector('[data-organization-new-project]').onclick=()=>newProject(organizationStore.getState().selectedId);
 projectStatus.onchange=()=>projectStore.setStatus(projectStore.getState().selectedId,projectStatus.value);for(const domainStore of [projectStore,organizationStore,roadmapStore,store,discoveryStore,strategyStore,recommendationStore,reviewSessionStore,conversationStore,taskStore])domainStore.subscribe(()=>{renderProject();renderRally();if(organizationWorkspace.classList.contains('open'))renderOrganization();});renderProject();renderRally();
+const queueUI=initWorkQueueUI({queue:workQueue,projectStore,organizationStore,container:rallyWorkspace.querySelector('header>div:last-child'),onOpen(item){openProject(item.projectId);if(item.target==='project'||item.target==='roadmap'||!item.contextAvailable)return;navigateProject({target:item.target,referenceId:item.referenceId,kind:item.kind});}});
+for(const domain of [projectStore,organizationStore,roadmapStore,store,discoveryStore,strategyStore,recommendationStore,reviewSessionStore,conversationStore,taskStore])domain.subscribe(queueUI.render);
 document.addEventListener('keydown',event=>{if(event.key!=='Escape')return;const dialog=document.querySelector('.page-dialog,.version-inspection');if(dialog){dialog.remove();return;}if(packet.classList.contains('open')){packet.classList.remove('open');packetStore.close();return;}for(const dock of [discoveryDock,strategyDock,recommendationsDock])dock.classList.remove('open');});
 
 function moveControls(item, index, count, move) {

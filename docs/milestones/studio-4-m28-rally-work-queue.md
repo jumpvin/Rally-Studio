@@ -1,7 +1,7 @@
 ---
 milestone-id: studio-4-m28-rally-work-queue
 mode: implementation
-status: active
+status: implemented
 baseline: 843b928a1c249b3a1bc1fede5610ac1e8540a28b
 validation-level: functional
 affected-paths:
