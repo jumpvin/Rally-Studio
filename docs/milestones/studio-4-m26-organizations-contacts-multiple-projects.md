@@ -1,7 +1,7 @@
 ---
 milestone-id: studio-4-m26-organizations-contacts-multiple-projects
 mode: implementation
-status: active
+status: implemented
 baseline: 49f136a1454decc22b9ccd29504d0872a8931164
 validation-level: functional
 affected-paths:
