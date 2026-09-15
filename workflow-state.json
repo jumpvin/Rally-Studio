@@ -5,15 +5,16 @@
   "framework_identity": "0.3.13-dev.24.3",
   "release_target": "4.0.0",
   "current_milestone": "studio-4-m25-project-workspace-foundation",
-  "current_status": "implemented",
+  "current_status": "approved",
   "current_build": "3.0.0",
-  "baseline": "fcbcb2e7a350fa1ccaee7aeb812c552a7adb1ba8",
-  "mode": "implementation",
+  "baseline": "8f5f5971f5b561787f15d365c8c5b97932227943",
+  "mode": "architecture",
   "validation_level": "functional",
   "affected_paths": [
     "studio4/**",
     "docs/implementation/**",
     "docs/milestones/studio-4-m25-project-workspace-foundation.md",
+    "docs/reviews/studio-4-m25-architecture-review.md",
     "package.json"
   ],
   "affected_surfaces": [
@@ -25,5 +26,5 @@
   ],
   "retained_evidence": [],
   "next_owner": "architecture",
-  "next_command": "Review"
+  "next_command": "Create Milestone"
 }
