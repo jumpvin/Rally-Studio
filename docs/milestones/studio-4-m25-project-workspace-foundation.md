@@ -1,7 +1,7 @@
 ---
 milestone-id: studio-4-m25-project-workspace-foundation
 mode: implementation
-status: active
+status: implemented
 baseline: fcbcb2e7a350fa1ccaee7aeb812c552a7adb1ba8
 validation-level: functional
 affected-paths:
