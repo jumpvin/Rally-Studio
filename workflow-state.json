@@ -4,27 +4,26 @@
   "authorized_branch": "master",
   "framework_identity": "0.3.13-dev.24.3",
   "release_target": "4.0.0",
-  "current_milestone": "studio-4-m27-project-playbooks-roadmaps",
-  "current_status": "approved",
+  "current_milestone": "studio-4-m28-rally-work-queue",
+  "current_status": "active",
   "current_build": "3.0.0",
-  "baseline": "6bf9555fc8f02237f2c6a823d47c6d9fcf932d7a",
-  "mode": "architecture",
+  "baseline": "843b928a1c249b3a1bc1fede5610ac1e8540a28b",
+  "mode": "implementation",
   "validation_level": "functional",
   "affected_paths": [
     "studio4/**",
     "docs/implementation/**",
-    "docs/milestones/studio-4-m27-project-playbooks-roadmaps.md",
-    "docs/reviews/studio-4-m27-architecture-review.md",
+    "docs/milestones/studio-4-m28-rally-work-queue.md",
     "package.json"
   ],
   "affected_surfaces": [
-    "Project Playbook definitions",
-    "Project Roadmap/checkpoint records",
-    "Playbook-to-Project application",
-    "Roadmap progress and next checkpoint",
-    "Project Workspace roadmap integration"
+    "Rally Work Queue projection",
+    "Cross-project Needs Attention",
+    "Work-item provenance and priority",
+    "Work Queue filtering/navigation",
+    "Rally Workspace operational overview"
   ],
   "retained_evidence": [],
-  "next_owner": "architecture",
-  "next_command": "Create Milestone"
+  "next_owner": "builder",
+  "next_command": "Implement Milestone"
 }
