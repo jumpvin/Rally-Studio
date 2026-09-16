@@ -5,15 +5,16 @@
   "framework_identity": "0.3.13-dev.24.3",
   "release_target": "4.0.0",
   "current_milestone": "studio-4-m29-team-members-work-ownership",
-  "current_status": "implemented",
+  "current_status": "approved",
   "current_build": "3.0.0",
-  "baseline": "cf669dfd71135bb8d8887d84e1a44aae9a3de739",
-  "mode": "implementation",
+  "baseline": "8ce50e97c18f4cc7281247f9aa88b8eea635c9b5",
+  "mode": "architecture",
   "validation_level": "functional",
   "affected_paths": [
     "studio4/**",
     "docs/implementation/**",
     "docs/milestones/studio-4-m29-team-members-work-ownership.md",
+    "docs/reviews/studio-4-m29-architecture-review.md",
     "package.json"
   ],
   "affected_surfaces": [
@@ -25,5 +26,5 @@
   ],
   "retained_evidence": [],
   "next_owner": "architecture",
-  "next_command": "Review"
+  "next_command": "Create Milestone"
 }
