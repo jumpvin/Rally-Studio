@@ -1,7 +1,7 @@
 ---
 milestone-id: studio-4-m29-team-members-work-ownership
 mode: implementation
-status: active
+status: implemented
 baseline: cf669dfd71135bb8d8887d84e1a44aae9a3de739
 validation-level: functional
 affected-paths:

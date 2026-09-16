@@ -1,0 +1,15 @@
+const clone=value=>structuredClone(value);
+
+// Internal product identities, deliberately separate from Contacts and audit actors.
+export function createTeamStore({seed=true}={}){
+  const members={},order=[],listeners=new Set();let sequence=0;
+  const member=id=>{if(!members[id])throw new Error(`Unknown Team member: ${id}`);return members[id];};
+  const notify=()=>listeners.forEach(fn=>fn(api.list()));
+  const api={subscribe(fn){listeners.add(fn);return()=>listeners.delete(fn);},list({includeArchived=true}={}){return order.map(id=>clone(members[id])).filter(item=>includeArchived||item.status==='active');},get(id){return clone(member(id));},validateAssignment(id,currentId=null){if(id===null)return null;const value=member(id);if(value.status!=='active'&&id!==currentId)throw new Error('Archived Team member cannot receive new assignments');return id;},create({name,email='',role='',id}={}){const label=String(name||'').trim();if(!label)throw new Error('Team member name is required');const identity=id||`team-${Date.now().toString(36)}-${++sequence}`;if(members[identity])throw new Error('Team identity already exists');const now=new Date().toISOString();members[identity]={id:identity,name:label,email:String(email).trim(),role:String(role).trim(),status:'active',createdAt:now,updatedAt:now};order.push(identity);notify();return identity;},update(id,{name,email,role}={}){const value=member(id),label=name===undefined?value.name:String(name).trim();if(!label)throw new Error('Team member name is required');Object.assign(value,{name:label,email:email===undefined?value.email:String(email).trim(),role:role===undefined?value.role:String(role).trim(),updatedAt:new Date().toISOString()});notify();return clone(value);},setStatus(id,status){if(!['active','archived'].includes(status))throw new Error('Unsupported Team status');Object.assign(member(id),{status,updatedAt:new Date().toISOString()});notify();return api.get(id);}};
+  if(seed)for(const [id,name,role] of [['team-lead','Rally Lead','Lead'],['team-designer','Designer','Design'],['team-builder','Builder','Build']])api.create({id,name,role});
+  return api;
+}
+
+export function createTeamWorkloads({teamStore,projectStore,taskStore,roadmapStore,queue}){
+  return {list(){const state=taskStore.getState(),tasks=state.order.map(id=>state.tasks[id]),projects=projectStore.list(),items=queue.list();return teamStore.list().map(member=>{const openTasks=tasks.filter(task=>task.assigneeId===member.id&&task.status!=='done'),readyCheckpoints=projects.flatMap(project=>roadmapStore.getForProject(project.project.id)?.checkpoints||[]).filter(checkpoint=>checkpoint.completionMode==='manual'&&checkpoint.status==='ready'&&checkpoint.ownerId===member.id),actionableItems=items.filter(item=>(item.ownerId||item.suggestedOwnerId)===member.id&&item.status!=='unavailable'&&item.status!=='waiting-on-client'),highPriorityItems=actionableItems.filter(item=>item.priority==='high'),ledProjects=projects.filter(project=>project.project.ownerId===member.id);return{member,openTasks,readyCheckpoints,actionableItems,highPriorityItems,ledProjects};});}};
+}
