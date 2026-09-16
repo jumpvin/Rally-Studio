@@ -1,7 +1,7 @@
 ---
 milestone-id: studio-4-m30-stage-7-integration-usability-checkpoint
 mode: implementation
-status: active
+status: implemented
 baseline: f982a93ad1e9f9c7365c008eb60f41f4adbbb946
 validation-level: functional
 affected-paths:
